@@ -8,7 +8,7 @@ categories: jekyll update
 
 **input**: image
 
-![image.png](%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%8B%E1%85%B3%E1%86%B7%201a464b49932e80578f34f2797bf4ee17/image.png)
+![image.png](2025-02-25-ImageClassification/image.png)
 
 ➡️
 
@@ -24,13 +24,13 @@ dog
 
 이미지를 입력받아 해당 카테고리를 출력
 
-![image.png](%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%8B%E1%85%B3%E1%86%B7%201a464b49932e80578f34f2797bf4ee17/image%201.png)
+![image.png](2025-02-25-ImageClassification/image1.png)
 
 Object Detection에도 활용
 
 # Hyperparameters
 
-![image.png](%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%8B%E1%85%B3%E1%86%B7%201a464b49932e80578f34f2797bf4ee17/image%202.png)
+![image.png](2025-02-25-ImageClassification/image2.png)
 
 - 사전에 미리 정하는 parameter
 - 학습을 통해 학습하거나 갱신되지 않음(↔parameter - weight 등)
@@ -40,7 +40,7 @@ Object Detection에도 활용
 
 # Setting Hyperparameters
 
-![image.png](%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%8B%E1%85%B3%E1%86%B7%201a464b49932e80578f34f2797bf4ee17/image%203.png)
+![image.png](2025-02-25-ImageClassification/image3.png)
 
 - 학습 결과를 통해 조절
 - Datasets: train, validation, test
