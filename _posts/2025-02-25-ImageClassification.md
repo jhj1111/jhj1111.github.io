@@ -8,7 +8,7 @@ categories: jekyll update
 
 **input**: image
 
-![Neo with lightbox](/_posts/2025-02-25-ImageClassification/image.png)
+![Neo with lightbox](../2025-02-25-ImageClassification/image.png)
 
 ➡️
 
@@ -24,13 +24,13 @@ dog
 
 이미지를 입력받아 해당 카테고리를 출력
 
-![image.png](/_posts/2025-02-25-ImageClassification/image1.png)
+![image.png](./2025-02-25-ImageClassification/image1.png)
 
 Object Detection에도 활용
 
 # Hyperparameters
 
-![Neo with lightbox](/_posts/2025-02-25-ImageClassification/image2.png)
+![Neo with lightbox](./_posts/2025-02-25-ImageClassification/image2.png)
 
 - 사전에 미리 정하는 parameter
 - 학습을 통해 학습하거나 갱신되지 않음(↔parameter - weight 등)
