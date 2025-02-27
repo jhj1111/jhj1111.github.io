@@ -8,19 +8,7 @@ categories: jekyll update
 
 **input**: image
 
-![Neo with lightbox](/assets/img/2025-02-25-ImageClassification/image.png)
-
-➡️
-
-**output**: classes
-
-**cat**
-
-bird
-
-car
-
-dog
+![Neo with lightbox](/assets/img/2025-02-25-ImageClassification/image00.png)
 
 이미지를 입력받아 해당 카테고리를 출력
 
