@@ -1,10 +1,15 @@
-# 제목 없음
+---
+layout: post
+title:  "Neural Network"
+date:   2025-03-01 01:59:33 +0900
+categories: jekyll update
+---
 
 # Perceptron(퍼셉트론)
 
 ## 선형 결합
 
-![출처: 모두의 딥러닝](/assets/img/2025-03-01-LinearClassification/image.png)
+![출처: 모두의 딥러닝](/assets/img/2025-03-01-NeuralNetwork/image.png)
 
 출처: 모두의 딥러닝
 
@@ -15,11 +20,11 @@
 
 ## 기하학적 의미
 
-![출처: 아무리봐도 대학교재인데                                                               출처: 위키피디아](/assets/img/2025-03-01-LinearClassification/image1.png)
+![출처: 아무리봐도 대학교재인데                                                               출처: 위키피디아](/assets/img/2025-03-01-NeuralNetwork/image1.png)
 
 출처: 아무리봐도 대학교재인데                                                               출처: 위키피디아
 
-![image.png](/assets/img/2025-03-01-LinearClassification/image2.png)
+![image.png](/assets/img/2025-03-01-NeuralNetwork/image2.png)
 
 - 서로 다른 종류를 분류
 - 서로 다른 모델들 간의 경계선을 생성
@@ -31,22 +36,21 @@
       ax_{1} + bx_{2} + c + dx_{1} + ex_{2} + f = (a+d)x_{1} + (b+e)x_{2} + (c+f)
       $$
     
-      
     - 선형 분류가 어렵거나 복잡한 모델의 분류 어려움
 - 활성화 함수를 통해 비선형성 추가
     - Relu, Sigmoid, SVM 등 여러 종류의 활성화 함수가 있음
     - 비전 딥러닝에서 사용하는 활성화 함수는 대부분(사실상 무조건?) Relu 혹은 Relu 변형 함수
 
-![image.png](/assets/img/2025-03-01-LinearClassification/image3.png)
+![image.png](/assets/img/2025-03-01-NeuralNetwork/image3.png)
 
 ## Relu
 
-![image.png](/assets/img/2025-03-01-LinearClassification/image4.png)
+![image.png](/assets/img/2025-03-01-NeuralNetwork/image4.png)
 
 - 선형 변환을 통해 새로운 분류 모델 생성
 - 하지만 변형된 모델도 하나의 선으로 분류가 불가능
 
-![image.png](/assets/img/2025-03-01-LinearClassification/image5.png)
+![image.png](/assets/img/2025-03-01-NeuralNetwork/image5.png)
 
 - 이후 active function(Relu)를 통해 새롭게 매핑
 - 선형 분류 모델 생성 가능
@@ -55,7 +59,7 @@
 
 ## layer
 
-![출처: LG CNS 블로그 ([https://www.lgcns.com/blog/cns-tech/ai-data/14558/](https://www.lgcns.com/blog/cns-tech/ai-data/14558/))](/assets/img/2025-03-01-LinearClassification/image6.png)
+![출처: LG CNS 블로그 ([https://www.lgcns.com/blog/cns-tech/ai-data/14558/](https://www.lgcns.com/blog/cns-tech/ai-data/14558/))](/assets/img/2025-03-01-NeuralNetwork/image6.png)
 
 출처: LG CNS 블로그 ([https://www.lgcns.com/blog/cns-tech/ai-data/14558/](https://www.lgcns.com/blog/cns-tech/ai-data/14558/))
 
@@ -77,11 +81,11 @@
 
 ## Softmax
 
-![출처 : [https://towardsdatascience.com/softmax-activation-function-explained-a7e1bc3ad60](https://towardsdatascience.com/softmax-activation-function-explained-a7e1bc3ad60)](/assets/img/2025-03-01-LinearClassification/image7.png)
+![출처 : [https://towardsdatascience.com/softmax-activation-function-explained-a7e1bc3ad60](https://towardsdatascience.com/softmax-activation-function-explained-a7e1bc3ad60)](/assets/img/2025-03-01-NeuralNetwork/image7.png)
 
 출처 : [https://towardsdatascience.com/softmax-activation-function-explained-a7e1bc3ad60](https://towardsdatascience.com/softmax-activation-function-explained-a7e1bc3ad60)
 
-![출처 : [https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/](https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/)](/assets/img/2025-03-01-LinearClassification/image8.png)
+![출처 : [https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/](https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/)](/assets/img/2025-03-01-NeuralNetwork/image8.png)
 
 출처 : [https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/](https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/)
 
@@ -92,7 +96,7 @@
 
 ## future tasks
 
-![image.png](/assets/img/2025-03-01-LinearClassification/image9.png)
+![image.png](/assets/img/2025-03-01-NeuralNetwork/image9.png)
 
 - 해당 모델의 평가 척도? → loss function
 - 가중치(W) 선정 방법? → back propagation & optimization
