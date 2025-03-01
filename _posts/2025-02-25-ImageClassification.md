@@ -6,7 +6,6 @@ categories: jekyll update
 ---
 # Image Classification
 
-**input**: image
 
 ![Neo with lightbox](/assets/img/2025-02-25-ImageClassification/image00.png)
 
