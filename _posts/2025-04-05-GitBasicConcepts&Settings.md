@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Weight"
+date:   2025-04-05 03:04:33 +0900
+categories: jekyll update
+---
+
 # 기본 개념 & 설정
 
 # 참고자료
