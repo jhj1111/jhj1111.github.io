@@ -95,11 +95,11 @@ categories: jekyll update
 
 # VCS(**Version Control System)**
 
-![중앙집중식 버전 관리(CVCS)](/assets/img/2025-04-05-Git_기본개념&설정/image01.png)
+![중앙집중식 버전 관리(CVCS)](/assets/img/2025-04-05-GitBasicConcepts&Settings/image01.png)
 
 중앙집중식 버전 관리(CVCS)
 
-![분산 버전 관리 시스템(DVCS)](/assets/img/2025-04-05-Git_기본개념&설정/image02.png)
+![분산 버전 관리 시스템(DVCS)](/assets/img/2025-04-05-GitBasicConcepts&Settings/image02.png)
 
 분산 버전 관리 시스템(DVCS)
 
@@ -111,7 +111,7 @@ categories: jekyll update
 
 ## 스냅샷
 
-![/assets/img/2025-04-05-Git_기본개념&설정/image01.png](/assets/img/2025-04-05-Git_기본개념&설정/image03.png)
+![image.png](/assets/img/2025-04-05-GitBasicConcepts&Settings/image03.png)
 
 - Git의 버전관리 방식
 - **변경사항이 없는 파일**의 경우 데이터를 저장하지 않고 **이전 상태의 파일 링크**만 저장
@@ -133,7 +133,7 @@ categories: jekyll update
 
 # 파일상태
 
-![파일의 라이프사이클](/assets/img/2025-04-05-Git_기본개념&설정/image04.png)
+![파일의 라이프사이클](/assets/img/2025-04-05-GitBasicConcepts&Settings/image04.png)
 
 파일의 라이프사이클
 
@@ -149,7 +149,7 @@ categories: jekyll update
 
 ## Tree
 
-![/assets/img/2025-04-05-Git_기본개념&설정/image01.png](/assets/img/2025-04-05-Git_기본개념&설정/image05.png)
+![image.png](/assets/img/2025-04-05-GitBasicConcepts&Settings/image05.png)
 
 | 트리 | 역할 |
 | --- | --- |
@@ -185,7 +185,7 @@ $ git config --global user.name "<name>"
 $ git config --global user.email <email>
 ```
 
-![화면 캡처 2025-04-04 132850.png](/assets/img/2025-04-05-Git_기본개념&설정/image06.png)
+![화면 캡처 2025-04-04 132850.png](/assets/img/2025-04-05-GitBasicConcepts&Settings/image06.png)
 
 - **name**
     - 사용자 이름. commit 작성자 확인에 사용
