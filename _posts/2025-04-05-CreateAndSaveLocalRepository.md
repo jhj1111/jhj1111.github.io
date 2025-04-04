@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "저장소 생성 및 저장(local)"
+title:  "저장소 생성 및 저장(local) "
 date:   2025-04-05 05:04:33 +0900
 categories: jekyll update
 ---
