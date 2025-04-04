@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Weight"
+title:  "기본 개념 & 설정"
 date:   2025-04-05 03:04:33 +0900
 categories: jekyll update
 ---
