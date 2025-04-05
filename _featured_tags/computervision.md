@@ -1,6 +1,13 @@
 ---
 # Featured tags need to have either the `list` or `grid` layout (PRO only).
-layout: list
+# layout: list
+layout: tag-list
+
+type: tag
+
+category: studylog
+
+sidebar: true
 
 # The title of the tag's page.
 title: ComputerVision
@@ -18,5 +25,5 @@ description: >
 
 # Exclude this example category from the sitemap.
 # DON'T USE THIS SETTING IN YOUR CATEGORIES!
-sitemap: false
+# sitemap: false
 ---

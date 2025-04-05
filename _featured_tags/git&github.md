@@ -1,6 +1,13 @@
 ---
 # Featured tags need to have either the `list` or `grid` layout (PRO only).
-layout: list
+# layout: list
+layout: tag-list
+
+type: tag
+
+category: studylog
+
+sidebar: true
 
 # The title of the tag's page.
 title: Git&GitHub
