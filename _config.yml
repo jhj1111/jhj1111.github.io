@@ -50,7 +50,7 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             Git&GitHub
-    url:               /git_github/
+    url:               /git&github/
   - title:             ComputerVision
     url:               /computer_vision/
   - title:             Example
