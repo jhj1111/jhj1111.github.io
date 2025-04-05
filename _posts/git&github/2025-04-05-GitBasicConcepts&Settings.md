@@ -5,9 +5,8 @@ description: >
   Git의 기본개념 및 환경설정
 sitemap: false
 hide_last_modified: true
-categories:
-  - studylog
-  - git&github
+categories: studylog
+tags: git&github
 ---
 
 # 기본 개념 & 설정

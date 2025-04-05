@@ -5,9 +5,8 @@ description: >
   commit을 이용한 버전 조회 및 이동.
 sitemap: false
 hide_last_modified: true
-categories:
-  - studylog
-  - git&github
+categories: studylog
+tags: git&github
 ---
 
 # commit 조회 및 되돌리기

@@ -2,7 +2,8 @@
 layout: post
 title:  "Image Classification"
 date:   2025-02-25 01:59:33 +0900
-categories: jekyll update
+categories: studylog
+tags: computervision
 ---
 # Image Classification
 

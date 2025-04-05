@@ -2,7 +2,8 @@
 layout: post
 title:  "Batch, Epoch, Over/Under fitting"
 date:   2025-03-01 01:00:33 +0900
-categories: jekyll update
+categories: studylog
+tags: computervision
 ---
 # Batch size, iteration, epoch
 

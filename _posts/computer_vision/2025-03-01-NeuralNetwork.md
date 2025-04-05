@@ -2,7 +2,8 @@
 layout: post
 title:  "Neural Network"
 date:   2025-03-01 01:59:33 +0900
-categories: jekyll update
+categories: studylog
+tags: computervision
 ---
 # Neural Network
 
