@@ -3,7 +3,6 @@ layout: post
 title: "저장소 생성 및 저장(remote)"
 description: >
   GitHub 저장소 생성 및 데이터 업데이트
-sitemap: false
 hide_last_modified: true
 categories: studylog
 tags: git&github
