@@ -38,7 +38,7 @@ $ git commit -m '<commit_massage>'
 
 ## 2. 기존 저장소 Clone
 
-![출처: https://velog.io/@itzel_02/IntelliJ-git-clone-및-연동-방법](/assets/img/2025-04-05-CreateAndSaveLocalRepository/image01.png)
+![출처: https://velog.io/@itzel_02/IntelliJ-git-clone-및-연동-방법](/assets/img/25-04-03-CreateAndSaveLocalRepository/image01.png)
 
 
 ```bash
@@ -56,7 +56,7 @@ $ git clone https://github.com/libgit2/libgit2 mylibgit
 
 ## 파일 상태 확인
 
-![파일의 라이프사이클](/assets/img/2025-04-05-CreateAndSaveLocalRepository/image02.png)
+![파일의 라이프사이클](/assets/img/25-04-03-CreateAndSaveLocalRepository/image02.png)
 
 파일의 라이프사이클
 
@@ -106,7 +106,7 @@ new file: README.md
 
 ## Modified → Stage&commit 하기
 
-![git_lifecycle](/assets/img/2025-04-05-CreateAndSaveLocalRepository/image03.png)
+![git_lifecycle](/assets/img/25-04-03-CreateAndSaveLocalRepository/image03.png)
 
 - 위의 그림과 같이 한번 add된 파일이라도 commit 이후에는 Stage 상태가 아니게 됨
 - 파일이 변경되었다면 **add** 후 **commit**을 실행, 즉 **commit전에 항상 add한다**고 생각
@@ -134,9 +134,9 @@ create mode 100644 README
 
 # .gitignore
 
-![image](/assets/img/2025-04-05-CreateAndSaveLocalRepository/image04.png)
+![image](/assets/img/25-04-03-CreateAndSaveLocalRepository/image04.png)
 
-![image](/assets/img/2025-04-05-CreateAndSaveLocalRepository/image05.png)
+![image](/assets/img/25-04-03-CreateAndSaveLocalRepository/image05.png)
 
 - git add . 을 실행하면 디렉토리에 있는 쓸데없는 파일까지 추가가 됨
 - git add를 편하게 수행하기 위해 **git 예외 파일**을 기록
