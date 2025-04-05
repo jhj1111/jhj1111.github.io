@@ -7,6 +7,8 @@ hide_last_modified: true
 categories: studylog
 tags: git&github
 ---
+* toc
+{:toc}
 
 # commit 조회 및 되돌리기
 

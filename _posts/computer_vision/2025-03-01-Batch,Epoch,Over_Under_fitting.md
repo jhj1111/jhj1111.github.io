@@ -5,6 +5,8 @@ date:   2025-03-01 01:00:33 +0900
 categories: studylog
 tags: computervision
 ---
+* toc
+{:toc}
 # Batch size, iteration, epoch
 
 ![출처: [https://wikidocs.net/55580](https://wikidocs.net/55580)](/assets/img/Batch,Epoch,Over_Under_fitting/image.png)
