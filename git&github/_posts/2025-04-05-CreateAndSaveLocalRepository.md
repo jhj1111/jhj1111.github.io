@@ -1,7 +1,10 @@
 ---
 layout: post
-title:  "저장소 생성 및 저장(local) "
-date:   2025-04-05 05:04:33 +0900
+title: "저장소 생성 및 저장(local)"
+description: >
+  로컬 저장소 생성 및 라이프 사이클
+sitemap: false
+hide_last_modified: true
 categories: jekyll update
 ---
 

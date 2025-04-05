@@ -1,7 +1,10 @@
 ---
 layout: post
-title:  "기본 개념 & 설정"
-date:   2025-04-05 03:04:33 +0900
+title: "기본 개념 & 설정"
+description: >
+  Git의 기본개념 및 환경설정
+sitemap: false
+hide_last_modified: true
 categories: jekyll update
 ---
 

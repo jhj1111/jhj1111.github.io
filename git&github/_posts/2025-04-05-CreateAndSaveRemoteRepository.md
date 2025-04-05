@@ -1,7 +1,10 @@
 ---
 layout: post
-title:  "저장소 생성 및 저장(remote)"
-date:   2025-04-05 15:14:33 +0900
+title: "저장소 생성 및 저장(remote)"
+description: >
+  GitHub 저장소 생성 및 데이터 업데이트
+sitemap: false
+hide_last_modified: true
 categories: jekyll update
 ---
 

@@ -1,7 +1,10 @@
 ---
 layout: post
-title:  "commit 조회 및 되돌리기"
-date:   2025-04-05 12:14:33 +0900
+title: "commit 조회 및 되돌리기"
+description: >
+  commit을 이용한 버전 조회 및 이동.
+sitemap: false
+hide_last_modified: true
 categories: jekyll update
 ---
 
