@@ -49,6 +49,10 @@ author:
 
 # Add links to the sidebar.
 menu:
+  - title:             Git&GitHub
+    url:               /git_github/
+  - title:             ComputerVision
+    url:               /computer_vision/
   - title:             Example
     url:               /example/
   - title:             Documentation
