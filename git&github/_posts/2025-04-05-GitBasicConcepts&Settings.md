@@ -5,7 +5,9 @@ description: >
   Git의 기본개념 및 환경설정
 sitemap: false
 hide_last_modified: true
-categories: jekyll update
+categories:
+  - studylog
+  - git&github
 ---
 
 # 기본 개념 & 설정
