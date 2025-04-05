@@ -55,7 +55,7 @@ menu:
       - title:         Git&GitHub
         url:           /git&github/
       - title:         ComputerVision
-        url:           /computer_vision/
+        url:           /computervision/
   - title:             Example
     url:               /example/
   - title:             Documentation
