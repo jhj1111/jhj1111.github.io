@@ -12,7 +12,8 @@ image:
 related_posts:
   - example/_posts/2017-11-23-example-content-ii.md
   - /example/2012-02-07-example-content/
-sitemap: false
+# sitemap: false
+categories: example
 ---
 
 Hydejack offers a few additional features to markup your markdown.
