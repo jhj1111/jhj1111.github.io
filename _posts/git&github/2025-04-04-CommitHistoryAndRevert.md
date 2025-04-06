@@ -90,9 +90,9 @@ HEAD is now at 59739ad add commit1
     - 해당 commit으로 복귀
     - 중간 commit으로도 복귀가 가능하나 log는 사라지므로 주의
     
-    ![image](assets/img/2025-04-04-CommitHistoryAndRevert/image01.png)
+    ![image](/assets/img/2025-04-04-CommitHistoryAndRevert/image01.png)
     
-    ![image](assets/img/2025-04-04-CommitHistoryAndRevert/image02.png)
+    ![image](/assets/img/2025-04-04-CommitHistoryAndRevert/image02.png)
     
     - commit7 → commit1으로 변경 : commit2 - commit7 history 삭제
 
@@ -102,21 +102,21 @@ HEAD is now at 59739ad add commit1
 - 3가지 버전 **soft**, **mixed**, **hard**
     - reset의 endpoint(버전)를 **HEAD**, **Indx**, **Working Directory** 중 어디로 정하는지에 따라 다름
 
-![reset soft](assets/img/2025-04-04-CommitHistoryAndRevert/image03.png)
+![reset soft](/assets/img/2025-04-04-CommitHistoryAndRevert/image03.png)
 
 reset soft
 
 - **HEAD**의 commit만 변경
 - 다시 commit을 통해 reset 이전 상태로 복귀 가능
 
-![mixed(default)](assets/img/2025-04-04-CommitHistoryAndRevert/image04.png)
+![mixed(default)](/assets/img/2025-04-04-CommitHistoryAndRevert/image04.png)
 
 mixed(default)
 
 - **HEAD**와 **Index**까지 commit 변경
 - 즉 **commit**과 **add** 명령 되돌린 상태
 
-![hard - 주의가 필요한 작업](assets/img/2025-04-04-CommitHistoryAndRevert/image05.png)
+![hard - 주의가 필요한 작업](/assets/img/2025-04-04-CommitHistoryAndRevert/image05.png)
 
 hard - 주의가 필요한 작업
 
