@@ -84,7 +84,7 @@ tags: computervision
 
 출처: [https://velog.io/@cha-suyeon/cs231n-5강-정리-Convolutional-Neural-Networks](https://velog.io/@cha-suyeon/cs231n-5%EA%B0%95-%EC%A0%95%EB%A6%AC-Convolutional-Neural-Networks)
 
-![/assets/img/2025-05-28-CNN(Convolution Neural Network)/image01.png](/assets/img/2025-05-28-CNN(ConvolutionNeuralNetwork)/image04.png)
+![/assets/img/2025-05-28-CNN(Convolution Neural Network)/image01.png](/assets/img/2025-05-28-CNN(ConvolutionNeuralNetwork)/image4.png)
 
 
 - 이때 W는 input image의 크기이며
