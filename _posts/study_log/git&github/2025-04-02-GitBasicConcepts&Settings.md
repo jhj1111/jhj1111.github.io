@@ -133,7 +133,7 @@ sticker: emoji//1f4aa
 
 ## 무결성
 
-```jsx
+```text
 24b9da6552252987aa493b52f8696cd6d3b00373
 ```
 
@@ -165,6 +165,7 @@ sticker: emoji//1f4aa
 | HEAD | 마지막 커밋 스냅샷, 다음 커밋의 부모 커밋 |
 | Index | 다음에 커밋할 스냅샷 |
 | working directory | 샌드박스 |
+
 - **HEAD** : 현재 branch의 마지막 commit
 - **Index**
     - 바로 다음에 커밋할 것들

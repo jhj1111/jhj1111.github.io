@@ -34,6 +34,7 @@ sticker: emoji//1f4aa
 
 - **kernel** 또는 **filter**라는 용어를 사용
 - 크게 2가지를 생각하면 된다.
+
 1. filter라고 하면 포토샵에서 쓰는거 아닌가? 라고 생각할 수 있는데
     1. ㅇㅇ 그 필터 맞음
     2. 이미지를 보면서 특정 부분만 강조하거나 특징을 뽑아내는 역할
@@ -134,11 +135,11 @@ FCL와 같이 단순히 필터를 순서대로 처리하고 끝나면 좋겠지�
 
 ![Fig_07.gif](/assets/images/study_log/computer_vision/2025-05-28-CNN(ConvolutionNeuralNetwork)/Fig_07.gif)
 
-1. 연산 결과를 전부 더함
+2 연산 결과를 전부 더함
 
 ![Fig_08.gif](/assets/images/study_log/computer_vision/2025-05-28-CNN(ConvolutionNeuralNetwork)/Fig_08.gif)
 
-1. 모든 픽셀에 상수(bias)를 더해준다. 일반적으로 모든 픽셀에 동일한 값을 더한다.
+3 모든 픽셀에 상수(bias)를 더해준다. 일반적으로 모든 픽셀에 동일한 값을 더한다.
 
 ![Fig_09.gif](/assets/images/study_log/computer_vision/2025-05-28-CNN(ConvolutionNeuralNetwork)/Fig_09.gif)
 
@@ -147,7 +148,7 @@ FCL와 같이 단순히 필터를 순서대로 처리하고 끝나면 좋겠지�
 - 위 설명에서 보듯 하나의 kernel은 **하나의 channel을 생성**
 - 따라서 하나의 layer만 거처도 1개의 channel만을 가지게 되며, 이는 학습량과 성능의 저하를 의미함
 - 따라서 CNN에서는 **다수의 filter를 사용**하며, 사용한 필터의 개수를 **K**로 표현함
-- 결과적으로 output의 depth($C_{out}$)=K **(input의 depth와 상관x)**
+- 결과적으로 output의 depth($$C_{out}$$)=K **(input의 depth와 상관x)**
 
 # Pooling Layer
 
@@ -171,10 +172,12 @@ FCL와 같이 단순히 필터를 순서대로 처리하고 끝나면 좋겠지�
 | **사용 목적** | 특징 강조, 크기 축소 | 크기 축소, 파라미터 감소, Overfitting 방지 |
 | **대표 사용 위치** | 중간 feature map downsampling | 마지막 layer 전 (GoogLeNet에서는 FCL 대신 사용) |
 | **장점** | 특징 강조가 강해 object detection 등에 유리 | 파라미터 수 감소, overfitting 방지, 네트워크 해석 가능성 향상 |
+
 - 왜 굳이 데이터 날려가며 pooling을 하냐 라고 생각할 수 있는데 다음과 같은 특징이 있다.
+
 1. **데이터 크기를 줄여서 계산을 더 빠르고 효율적으로 하기 위해**
-    1. 가장 큰 목적
+    - 가장 큰 목적
 2. **필터가 찾은 특징이 특정 위치에 덜 민감해지기 위해(translation invariance)**
-    1. input으로 같은 물체를 사용하더라도 물체가 움직이면서 사진 내 위치가 변할 수 있음
-    2. 예를 들어 고양이 귀를 찾는 filter가 있다면 귀가 사진의 왼쪽에 있든 오른쪽에 있든 pooling을 통해 크기를 줄이고 나면, **'귀가 있다는 정보만 남고, 어디에 있었는지까지는 신경 안 쓰게 되는 효과'**가 있어. - by gpt
+    - input으로 같은 물체를 사용하더라도 물체가 움직이면서 사진 내 위치가 변할 수 있음   
+    - 예를 들어 고양이 귀를 찾는 filter가 있다면 귀가 사진의 왼쪽에 있든 오른쪽에 있든 pooling을 통해 크기를 줄이고 나면, **'귀가 있다는 정보만 남고, 어디에 있었는지까지는 신경 안 쓰게 되는 효과'**가 있어. - by gpt
 3. **노이즈 같은 불필요한 정보는 줄이고 핵심 정보만 추출**
