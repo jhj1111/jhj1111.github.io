@@ -1,0 +1,146 @@
+<div class="menu_close_btn">
+    <img width="64" height="64" src="https://img.icons8.com/sf-black-filled/64/x.png" alt="x" onclick="menu_close_click()"/>
+</div>
+
+<div class="profile">
+    <div class="profile_pic">
+        <img src="/assets/images/me.png" alt="It's me">
+    </div>
+    <p>Sun Hong</p>
+</div>
+
+
+
+<div class="contact sidebar_box">
+    <h1>Contact Me</h1>
+    <div class="mail contact_box">
+        <img width="96" height="96" src="https://img.icons8.com/fluency/96/mail--v1.png" alt="mail--v1"/>
+        <a href="matilto:sunhong@unist.ac.kr">sunhong@unist.ac.kr</a>
+    </div>
+    <div class="linkedin contact_box">
+        <img width="96" height="96" src="https://img.icons8.com/color/96/linkedin.png" alt="linkedin"/>	
+        <a href="https://www.linkedin.com/in/sunhong-an/">Linked In</a>
+    </div>
+    <div class="notion contact_box">
+        <img width="64" height="64" src="https://img.icons8.com/cute-clipart/64/notion.png" alt="notion"/>	
+        <a href="https://www.notion.so/Sun-Hong-78ee5a443bfd49aab679d33f8c0697ef?pvs=4/">Portfolio</a>
+    </div>
+    <div class="github contact_box">
+        <img width="96" height="96" src="https://img.icons8.com/color/96/github.png" alt="github"/>
+        <a href="https://github.com/radic2682">Github</a>
+    </div>
+</div>
+
+
+<div id="category" class="sidebar_box">
+    <h1>Category<span class="count">{{site.posts.size}}</span></h1>
+    <ul class="menu_list">
+        {% assign sortedCategories = site.categories | sort: "order" %}
+    
+        {% for category in sortedCategories %}
+
+            {% if category.isSub %}
+                {% continue %}
+            {% endif %}
+    
+    
+            {% assign menuUrl = category.url %}
+    
+            {% if category.children.size >= 1 %}
+                {% assign menuUrl = 'javascript:;' %}
+            {% endif %}
+    
+            <div class="cat_box">
+                <li class="cat_title">
+                    {{ category.icon }}
+                    <a href="{{ category.url }}">{{ category.title }}</a>
+                </li>
+        
+                {% if category.children.size >= 1 %}
+                    <ul class="cat_part">
+                        {% for child in category.children %}
+    
+                            {% assign post_count = 0 %}
+    
+                            {% for post in site.posts %}
+                                {% for category in post.categories %}
+                                    {% if child == category %}
+                                        {% assign post_count = post_count | plus: 1 %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+    
+                            <li>
+                                {% for sub_category in site.categories %}
+                                    {% if sub_category.title == child %}
+                                        {{sub_category.icon}}
+                                    {% endif %}
+                                {% endfor %}
+    
+                                {% assign url_parts = page.url | split: '/' %}
+                                {% assign last_part = url_parts | last | url_decode %}
+    
+                                <a href="{{ category.url }}{{ child }}/" class="{% if last_part == child %}highlight{% endif %}">{{ child }}<span class="count_m">{{ post_count }}</span></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+    
+        {% endfor %}
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="user_panel" class="sidebar_box">
+    <h1>User Panel</h1>
+    <div class="set_ele">
+        <a href="/">
+            <img width="96" height="96" src="https://img.icons8.com/fluency/96/home.png" alt="home"/>
+        </a>
+        <a href="/visiting/">
+            <img src="/assets/images/logo_dragon_64x64.png" alt="Dragon">
+        </a>
+        <a href="/search/">
+            <img width="40" height="40" src="https://img.icons8.com/office/40/search--v1.png" alt="search--v1"/>
+        </a>
+    </div>
+</div>
+
+
+<div id="control_panel" class="sidebar_box">
+    <h1>Control Panel</h1>
+    <div class="set_ele">
+        <a href="https://gaac.vercel.app/">
+            <img width="96" height="96" src="https://gaac.vercel.app/assets/images/mascot.png" alt="image--v1"/>
+        </a>
+        <a href="https://analytics.google.com/analytics/">
+            <img width="96" height="96" src="https://img.icons8.com/fluency/96/analytics--v1.png" alt="analytics--v1"/>
+        </a>
+        <a href="https://search.google.com/u/2/search-console?resource_id=https%3A%2F%2Fradic2682.github.io%2F">
+            <img width="64" height="64" src="https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-Search-website-bearicons-outline-color-bearicons.png" alt="external-Search-website-bearicons-outline-color-bearicons"/>
+        </a>
+        <a href="https://searchadvisor.naver.com/console/board">
+            <img width="64" height="64" src="https://img.icons8.com/external-wanicon-two-tone-wanicon/64/external-search-seo-and-web-wanicon-two-tone-wanicon.png" alt="external-search-seo-and-web-wanicon-two-tone-wanicon"/>
+        </a>
+    </div>
+</div>
+
+<!-- <div id="count" class="sidebar_box">
+    <h1>Count</h1>
+    <div class="set_ele">
+        <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fradic2682.github.io&count_bg=%2391B0DD&title_bg=%2318253A&icon=&icon_color=%23580000&title=hits&edge_flat=false"/></a>
+    </div>
+</div> -->
+
+
+<button id="sidebar_on_off_btn">
+    <img width="64" height="64" src="/assets/images/icon_menu.png" alt="menu" onclick="menu_tag_click()"/>
+</button>

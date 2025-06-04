@@ -1,0 +1,91 @@
+url: "https://-.github.io"
+
+
+repository: "-/radic2682.github.io"
+
+comments:
+  provider:     "utterances"
+  utterances:
+    theme:      "preferred-color-scheme"
+    issue_term: "pathname"
+
+
+plugins:
+  - jemoji
+  - jekyll-sitemap
+
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: true
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  highlighter: rouge
+
+future: true
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+
+
+collections:
+  categories: # 카테고리정의 markdown 파일들이 위치할 디렉토리 이름. (프로젝트에 _categories 디렉토리 생성)
+    output: true  # html 페이지 생성
+    permalink: /category/:path/ # 생성된 페이지의 URL 형식
+
+
+
+
+defaults:
+  - scope:
+      path: ""
+      type: "category"
+      
+    values:
+      layout: "category"
+      use_math: true
+
+
+# Analytics
+# analytics:
+#   provider               : "google" 
+#                           # false (default), "google", "google-universal", "google-gtag", "custom"
+#   google:
+#     tracking_id          : "G-XNNPBKM8PX"
+    # anonymize_ip         : # true, false (default)
+
+
+
+# The CDN endpoint for images.
+# Notice that once it is assigned, the CDN url
+# will be added to all image (site avatar & posts' images) paths starting with '/'
+#
+# e.g. 'https://cdn.com'
+img_cdn: https://cdn.jsdelivr.net/gh/radic2682/radic2682.github.io@master

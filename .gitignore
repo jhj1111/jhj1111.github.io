@@ -1,0 +1,18 @@
+# This .gitignore is appropriate for repositories deployed to GitHub Pages and using
+# a Gemfile as specified at https://github.com/github/pages-gem#conventional
+
+# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
+_site/              # Jekyll 빌드 결과물 (HTML 등) 폴더, Git에 올릴 필요 없음
+.sass-cache/        # SCSS 처리 중 생기는 임시 캐시
+.jekyll-cache/      # Jekyll 증분 빌드 캐시
+.jekyll-metadata    # 변경된 파일 추적용 메타데이터
+
+# Additional Ruby/bundler ignore for when you run: bundle install
+/vendor
+
+# Specific ignore for GitHub Pages
+# GitHub Pages will always use its own deployed version of pages-gem 
+# This means GitHub Pages will NOT use your Gemfile.lock and therefore it is
+# counterproductive to check this file into the repository.
+# Details at https://github.com/github/pages-gem/issues/768
+Gemfile.lock
