@@ -2,10 +2,14 @@
 # a Gemfile as specified at https://github.com/github/pages-gem#conventional
 
 # Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
-_site/              # Jekyll 빌드 결과물 (HTML 등) 폴더, Git에 올릴 필요 없음
-.sass-cache/        # SCSS 처리 중 생기는 임시 캐시
-.jekyll-cache/      # Jekyll 증분 빌드 캐시
-.jekyll-metadata    # 변경된 파일 추적용 메타데이터
+_site/
+# Jekyll 빌드 결과물 (HTML 등) 폴더, Git에 올릴 필요 없음
+.sass-cache/        
+# SCSS 처리 중 생기는 임시 캐시
+.jekyll-cache/      
+# Jekyll 증분 빌드 캐시
+.jekyll-metadata    
+# 변경된 파일 추적용 메타데이터
 
 # Additional Ruby/bundler ignore for when you run: bundle install
 /vendor
