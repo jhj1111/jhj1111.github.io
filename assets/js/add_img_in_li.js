@@ -5,7 +5,7 @@ const listItems_ul = articleElement.querySelectorAll('ul li');
 const listItems_ol = articleElement.querySelectorAll('ol li');
 
 
-const imageUrl_ul = 'https://img.icons8.com/color/96/totoro.png';
+const imageUrl_ul = 'https://img.icons8.com/?size=100&id=ZWwA8bv48g5i&format=png&color=000000';
 const imageUrl_ol = 'https://img.icons8.com/emoji/48/pushpin-emoji.png';
 
 
