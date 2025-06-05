@@ -198,7 +198,8 @@
             }
 
             .toggle_arrow {
-                display: inline-block;
+                // display: inline-block;
+                display: flex;
                 margin-left: 80px;
                 font-size: 0.9rem;
                 color: #2c22ae;
