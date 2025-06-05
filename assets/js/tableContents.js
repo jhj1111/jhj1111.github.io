@@ -3,6 +3,7 @@ const table_contents_btn = document.querySelector('.table_contents_btn');
 const table_contents_btn_p = document.querySelector('.table_contents_btn p');
 
 const original_table_contents_btn = table_contents_btn ? window.getComputedStyle(table_contents_btn) : "";
+let isManuallyToggled = false; // ⭐ 클릭으로 토글했는지 여부
 
 function table_close_click(){
     if (table_contents.style.right === '' || table_contents.style.right === '15px') {
@@ -87,12 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
             open_contents_btn();
         });
         
-        // click 시 열기
-        table_contents_btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // 혹시 모를 이벤트 버블링 방지
-            table_close_click();
-        });
-
         // 마우스가 벗어나면 닫기
         table_contents.addEventListener('mouseleave', () => {
             closeTimer = setTimeout(() => {
@@ -100,7 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeTimer = 3000;
             }, 100); // ← 여기서 딜레이 시간(ms) 조절 가능
         });
-
+        
+        // click 시 열기
+        table_contents_btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // 혹시 모를 이벤트 버블링 방지
+            table_close_click();
+        });
+        
     } else {
         table_contents.style.display = "none";
         table_contents_btn.style.display = "none";
