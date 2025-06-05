@@ -8,8 +8,10 @@ let isManuallyToggled = false; // ⭐ 클릭으로 토글했는지 여부
 function table_close_click(){
     if (table_contents.style.right === '' || table_contents.style.right === '15px') {
         close_contents_btn();
+        isManuallyToggled = false; // 닫았으므로 클릭 상태 해제
     } else {
         open_contents_btn();
+        isManuallyToggled = true; // 열었으므로 클릭 상태 설정
     }
 }
 
@@ -84,16 +86,19 @@ document.addEventListener('DOMContentLoaded', function() {
             if (closeTimer) {
                 clearTimeout(closeTimer);
                 closeTimer = null;
+                open_contents_btn();
             }
-            open_contents_btn();
+            if (!isManuallyToggled) open_contents_btn();
         });
         
         // 마우스가 벗어나면 닫기
         table_contents.addEventListener('mouseleave', () => {
-            closeTimer = setTimeout(() => {
-                close_contents_btn();
-                closeTimer = 3000;
-            }, 100); // ← 여기서 딜레이 시간(ms) 조절 가능
+            if (!isManuallyToggled){
+                closeTimer = setTimeout(() => {
+                    close_contents_btn();
+                    closeTimer = 3000;
+                }, 100); // ← 여기서 딜레이 시간(ms) 조절 가능
+            }
         });
         
         // click 시 열기
