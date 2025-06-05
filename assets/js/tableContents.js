@@ -83,12 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // hover 시 열기
         table_contents.addEventListener('mouseenter', () => {
-            if (closeTimer) {
+            if (!isManuallyToggled && closeTimer) {
                 clearTimeout(closeTimer);
                 closeTimer = null;
                 open_contents_btn();
             }
-            if (!isManuallyToggled) open_contents_btn();
+            // if (!isManuallyToggled) open_contents_btn();
         });
         
         // 마우스가 벗어나면 닫기
