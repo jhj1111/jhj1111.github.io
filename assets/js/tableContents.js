@@ -86,6 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             open_contents_btn();
         });
+        
+        // click 시 열기
+        table_contents.addEventListener('click', () => {
+            open_contents_btn();
+        });
 
         // 마우스가 벗어나면 닫기
         table_contents.addEventListener('mouseleave', () => {
