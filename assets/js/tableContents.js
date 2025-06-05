@@ -88,8 +88,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // click 시 열기
-        table_contents.addEventListener('click', () => {
-            open_contents_btn();
+        table_contents_btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // 혹시 모를 이벤트 버블링 방지
+            table_close_click();
         });
 
         // 마우스가 벗어나면 닫기
