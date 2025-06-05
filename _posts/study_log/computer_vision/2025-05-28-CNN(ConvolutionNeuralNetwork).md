@@ -1,6 +1,6 @@
 ---
 title: CNN(Convolution Neural Network)
-thumbnail: https://www.researchgate.net/publication/323718937/figure/fig2/AS:615000087470084@1523638855931/Architecture-of-the-convolutional-neural-network-CNN-units-are-described-below.png
+thumbnail: https://media.licdn.com/dms/image/v2/D4E12AQGYlrPMNF_QgQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1693868532308?e=2147483647&v=beta&t=zmNxDNVa7KAZvqqqnjVQ-UqY2NRL1CYwWViXbyQF9Hs
 layout: post
 author: jhj
 categories:
