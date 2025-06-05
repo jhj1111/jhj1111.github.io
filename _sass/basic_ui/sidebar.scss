@@ -196,6 +196,14 @@
             &:last-child {
                 margin-bottom: 0;
             }
+
+            .toggle_arrow {
+                display: inline-block;
+                margin-left: 80px;
+                font-size: 0.9rem;
+                color: #2c22ae;
+                transition: transform 0.2s ease;
+            }
         }
     }
 

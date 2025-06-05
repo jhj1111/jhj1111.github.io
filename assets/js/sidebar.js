@@ -63,6 +63,38 @@ updateSidebarStatus();
 window.addEventListener('load', updateSidebarStatus);
 window.addEventListener('resize', updateSidebarStatus);
 
+document.addEventListener('DOMContentLoaded', function () {
+    const categoryTitles = document.querySelectorAll('.cat_box .cat_title');
+
+    categoryTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const parentBox = title.closest('.cat_box');
+            const childList = parentBox.querySelector('.cat_part');
+            const arrow = title.querySelector('.toggle_arrow');
+
+            if (!childList) return;
+
+            const isClosed = childList.style.display === 'none' || childList.style.display === '';
+
+            if (isClosed) {
+                childList.style.display = 'block';
+                if (arrow) arrow.textContent = '▼';
+            } else {
+                childList.style.display = 'none';
+                if (arrow) arrow.textContent = '▶';
+            }
+        });
+
+        // 기본 접힘 상태로 초기화
+        const childList = title.closest('.cat_box').querySelector('.cat_part');
+        const arrow = title.querySelector('.toggle_arrow');
+        if (childList && arrow) {
+            childList.style.display = 'block';
+            arrow.textContent = '▼';
+        }
+    });
+});
+
 function updateSidebarStatus() {
     if(!sidebar_blocked){
         if (matchMedia("(max-width: 1300px)").matches) {

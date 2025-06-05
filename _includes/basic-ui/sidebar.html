@@ -32,6 +32,7 @@
                 <li class="cat_title">
                     {{ category.icon }}
                     <a href="{{ category.url }}">{{ category.title }}</a>
+                    <span class="toggle_arrow">▼</span>
                 </li>
         
                 {% if category.children.size >= 1 %}
