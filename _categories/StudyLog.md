@@ -13,5 +13,5 @@ children:
     - Git&GitHub
     
 # 메인 아이콘
-icon: <img width="96" height="96" src="https://img.icons8.com/?size=100&id=7719&format=png&color=000000" alt="external-Project-graphic-design-goofy-color-kerismaker"/>
+icon: <img width="96" height="96" src="https://img.icons8.com/?size=100&id=6895&format=png&color=BC52FA" alt="external-Project-graphic-design-goofy-color-kerismaker"/>
 ---

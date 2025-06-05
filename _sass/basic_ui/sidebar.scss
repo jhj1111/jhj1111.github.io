@@ -88,13 +88,13 @@
         width: 80%;
 
         border-top: 1px solid;
-        border-color: #a1a1a1;
+        border-color: #f1f5ef;
  
         transition: all 0.2s;
     }
     .sidebar_box:hover {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-        background-color: #f5eee7;
+        background-color: #B9CFB0;
     }
 
     h1 {
@@ -155,7 +155,7 @@
     
                 a {
                     text-decoration: none;
-                    color: #000;
+                    color: #c5e89f;
                     margin-left: 10px;
                     @include font_poppins-m2;
                 }
@@ -180,7 +180,7 @@
                         margin-left: 10px;
                         
                         text-decoration: none;
-                        color: #000;
+                        color: #9fe8e7;
                         font-size: 12px;
                     }
                     img {
