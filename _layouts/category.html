@@ -29,41 +29,42 @@ layout: default
         </div>
         
         <div id="project_box_wrapper">
-            {% for post in site.posts %}
-                {% for category in post.categories %}
+            {% assign sorted_posts = site.posts | sort: 'post_order' | reverse %}
+                {% for post in sorted_posts %}
+                    {% for category in post.categories%}
 
-                    {% if page.name == category %}
-                        <!-- <span class="post-meta">{{ post.date | date: '%b %d %Y' }}, {{ site.data.authors[post.author].name }}
-                            <img src="{{ site.baseurl }}{{ site.data.authors[post.author].picture }}" class="gravatar">
-                        </span> -->
-        
-                        <div id="new_project_box" onClick="location.href ='{{ post.url }}'" style="cursor:pointer;">
-                            <div id="imgBox">
-                            {% if post.thumbnail %}
-                                <img src="{{ post.thumbnail }}" alt="{{ post.title }} Thumbnail">
-                            {% endif %}
+                        {% if page.name == category %}
+                            <!-- <span class="post-meta">{{ post.date | date: '%b %d %Y' }}, {{ site.data.authors[post.author].name }}
+                                <img src="{{ site.baseurl }}{{ site.data.authors[post.author].picture }}" class="gravatar">
+                            </span> -->
+            
+                            <div id="new_project_box" onClick="location.href ='{{ post.url }}'" style="cursor:pointer;">
+                                <div id="imgBox">
+                                {% if post.thumbnail %}
+                                    <img src="{{ post.thumbnail }}" alt="{{ post.title }} Thumbnail">
+                                {% endif %}
+                                </div>
+                
+                                {% for sub_category in post.categories %}
+
+                                    {% for selected_category in site.categories %}
+                                    {% if selected_category.title == sub_category %}
+                                        {% if selected_category.isSub %}
+                                            <a href="{{selected_category.url}}"><p id="box_category" style="background-color: {{ selected_category.color }};">{{ sub_category }}</p></a>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                
+                                {% endfor %}
+                
+                                <a href="{{ post.url }}"><p id="box_title">{{ post.title }}</p></a>
+                                <p class="description">{{ post.excerpt }}</p>
+                                <p id="signature">- jhj</p>
                             </div>
             
-                            {% for sub_category in post.categories %}
-
-                                {% for selected_category in site.categories %}
-                                {% if selected_category.title == sub_category %}
-                                    {% if selected_category.isSub %}
-                                        <a href="{{selected_category.url}}"><p id="box_category" style="background-color: {{ selected_category.color }};">{{ sub_category }}</p></a>
-                                    {% endif %}
-                                {% endif %}
-                                {% endfor %}
-            
-                            {% endfor %}
-            
-                            <a href="{{ post.url }}"><p id="box_title">{{ post.title }}</p></a>
-                            <p class="description">{{ post.excerpt }}</p>
-                            <p id="signature">- jhj</p>
-                        </div>
-        
-                    {% endif %}
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
         </div>
 
             
