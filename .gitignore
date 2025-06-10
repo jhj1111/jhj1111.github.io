@@ -22,3 +22,6 @@ _site/
 Gemfile.lock
 
 .obsidian
+file_generator.py
+file_generator
+Excalidraw
