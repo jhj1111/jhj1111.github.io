@@ -1,5 +1,6 @@
 ---
 title: (git)1. 기본 개념 & 설정
+post_order: 1
 thumbnail: https://images.datacamp.com/image/upload/v1651047046/image8_0e61d0dad8.png
 layout: post
 author: jhj

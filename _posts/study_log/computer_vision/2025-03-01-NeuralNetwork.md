@@ -1,5 +1,6 @@
 ---
 title: (vision)3. Neural Network
+post_order: 3
 thumbnail: https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/3a/b8/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork.png
 layout: post
 author: jhj

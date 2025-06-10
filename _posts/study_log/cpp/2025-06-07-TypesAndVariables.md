@@ -1,5 +1,6 @@
 ---
 title: (C++)3. 자료형과 변수
+post_order: 3
 thumbnail: https://acaroom.net/sites/default/files/uploads/datatypec.png
 layout: post
 author: jhj

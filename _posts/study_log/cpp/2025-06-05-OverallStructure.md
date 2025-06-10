@@ -1,5 +1,6 @@
 ---
 title: (C++)1. 기본 구조
+post_order: 1
 thumbnail: https://www.infoworld.com/wp-content/uploads/2024/06/c-plus-plus_code-100790020-orig.jpg?quality=50&strip=all
 layout: post
 author: jhj

@@ -1,5 +1,6 @@
 ---
 title: (C++)4. 연산(arithmetic)과 연산자(operators)
+post_order: 4
 thumbnail: https://acaroom.net/sites/default/files/uploads/datatypec.png
 layout: post
 author: jhj

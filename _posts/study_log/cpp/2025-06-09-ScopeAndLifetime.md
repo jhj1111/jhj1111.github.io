@@ -1,5 +1,6 @@
 ---
 title: (C++)6. Scope and Lifetime
+post_order: 6
 thumbnail: https://dvrtechnopark.wordpress.com/wp-content/uploads/2014/02/4970b-scopeandlifetime.jpg
 layout: post
 author: jhj

@@ -1,5 +1,6 @@
 ---
 title: (vision)1. Image Classification
+post_order: 1
 thumbnail: https://www.twine.net/blog/wp-content/uploads/2024/02/Untitled-1.png
 layout: post
 author: jhj

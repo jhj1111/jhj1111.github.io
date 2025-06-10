@@ -1,5 +1,6 @@
 ---
 title: (vision)5. CNN(Convolution Neural Network)
+post_order: 5
 thumbnail: https://media.licdn.com/dms/image/v2/D4E12AQGYlrPMNF_QgQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1693868532308?e=2147483647&v=beta&t=zmNxDNVa7KAZvqqqnjVQ-UqY2NRL1CYwWViXbyQF9Hs
 layout: post
 author: jhj

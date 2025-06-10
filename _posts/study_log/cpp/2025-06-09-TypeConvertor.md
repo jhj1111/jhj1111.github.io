@@ -1,5 +1,6 @@
 ---
 title: (C++)5.형변환
+post_order: 5
 thumbnail: https://techvidvan.com/tutorials/wp-content/uploads/2021/06/Type-Conversion-in-C.jpg
 layout: post
 author: jhj
