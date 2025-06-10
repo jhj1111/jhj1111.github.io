@@ -65,6 +65,7 @@ int main() {
 ```
 - one 1 : **int/in**t 실행 결과로 소숫점 이하 버린 후 형변환, 즉 <span style="color:rgb(255, 0, 0)">연산 후 형변환이 이루어짐</span>
 - one 2 : **float/int** -> float/float로 <span style="color:rgb(255, 0, 0)">widening conversion 후 연산</span>
+ 
 ## C-type type conversion
 > `(T) value`
 
@@ -72,6 +73,7 @@ int main() {
 int i = (int)3.141592;  //c-style
 ```
 - 문법이 간결하나 어떤 변환인지 알기 어려움
+ 
 ## C++-type conversion
 > `static_cast`, `const_cast`, `dynamic_cast`, `reinterpret_cast`
 
@@ -85,6 +87,7 @@ dynamic_cast<new_type>(value); ///< 상속 관계 중 다형성을 사용할 수
 - **const_cast** : `volatile` 및 `__unaligned` 특성을 제거하기 위해 사용
 - **dynamic_cast** : scope 및 virtual table 설정, 다형 형식의 변환에 사용
 - reinterpret_cast : 비트의 간단한 재해석에 사용 ~~이건 잘 모르겠다~~
+
 # 용어
 > 형변환이 가능한지, 혹은 의도대로 변환이 되었는지 확인하기 위해서는 type 확인이 필요하다. 또한 c-base 언어는 인식과는 달리 에러 검출이 엄격한 언어가 아니다. 따라서 run-time 에러 및 오류에 관해 인지를 할 필요가 있다.
 
@@ -96,15 +99,15 @@ dynamic_cast<new_type>(value); ///< 상속 관계 중 다형성을 사용할 수
 - 헤더파일 <typeinfo\> 필요
 ```cpp
 class type_info { 
-public: type_info(const type_info& rhs) = delete; // cannot be copied 
-virtual ~type_info(); size_t hash_code() const; 
-_CRTIMP_PURE bool operator==(const type_info& rhs) const; 
-type_info& operator=(const type_info& rhs) = delete; // cannot be copied
-_CRTIMP_PURE bool operator!=(const type_info& rhs) const; 
-_CRTIMP_PURE int before(const type_info& rhs) const; 
-size_t hash_code() const noexcept; 
-_CRTIMP_PURE const char* name() const; 
-_CRTIMP_PURE const char* raw_name() const; 
+	public: type_info(const type_info& rhs) = delete; // cannot be copied 
+	virtual ~type_info(); size_t hash_code() const; 
+	_CRTIMP_PURE bool operator==(const type_info& rhs) const; 
+	type_info& operator=(const type_info& rhs) = delete; // cannot be copied
+	_CRTIMP_PURE bool operator!=(const type_info& rhs) const; 
+	_CRTIMP_PURE int before(const type_info& rhs) const; 
+	size_t hash_code() const noexcept; 
+	_CRTIMP_PURE const char* name() const; 
+	_CRTIMP_PURE const char* raw_name() const; 
 };
 ```
 - 프라이빗 복사 생성자만 존재 : 직접 **인스턴스화 불가**
@@ -118,6 +121,7 @@ _CRTIMP_PURE const char* raw_name() const;
 	typeid(long).before(typeid(bool))	// 1
 	typeid(bool).before(typeid(long))	// 0
 	``` 
+
 ## Undefined Behavior
 > C++표준 방식에서 금지한 방식. compile-time에서 error 없이 통과되나 <span style="color:rgb(255, 0, 0)">run-time에 어떤 방식으로 작동할 지 예측 불가</span>능한 상태. 
 > 단순히 run-time에 에러나 오류를 발생(시키면 차라리 좋을텐데)하지 않으며, 상황에 따라 정상적으로 혹은 의도하지 않은 동작을 할 수 있다는 가능성이 있다는 점에서 매우 까다롭다.
@@ -129,6 +133,7 @@ _CRTIMP_PURE const char* raw_name() const;
 - 보안 취약점 발생
 - 기타 등등
 - 여튼 안좋음
+ 
 # C++ type conversion
 
 ## static_conversion
@@ -188,6 +193,7 @@ int main() {
 1234,3.14 
 3,3
 ```
+
 ## const_conversion
 > 클래스에서 **`const`**, `volatile` 및 `__unaligned` 특성을 제거
 
