@@ -1,5 +1,5 @@
 ---
-title: Batch size, iteration, epoch
+title: (vision)2. Batch size, iteration, epoch
 thumbnail: https://discuss.datasciencedojo.com/uploads/default/original/1X/808c4d2074b4ab07065cd8b316cd234679d5b31b.png
 layout: post
 author: jhj

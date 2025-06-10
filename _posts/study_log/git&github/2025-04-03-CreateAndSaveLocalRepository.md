@@ -1,5 +1,5 @@
 ---
-title: 저장소 생성 및 저장(local)
+title: (git)2. 저장소 생성 및 저장(local)
 thumbnail: https://velog.velcdn.com/images%2Fhaneul7960%2Fpost%2Fa990fb96-f709-406d-8b01-5dc7ce4a7466%2Fimage.png
 layout: post
 author: jhj

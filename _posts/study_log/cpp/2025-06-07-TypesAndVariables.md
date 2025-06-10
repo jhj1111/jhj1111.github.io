@@ -1,5 +1,5 @@
 ---
-title: 자료형과 변수
+title: (C++)3. 자료형과 변수
 thumbnail: https://acaroom.net/sites/default/files/uploads/datatypec.png
 layout: post
 author: jhj
@@ -7,11 +7,12 @@ categories:
   - StudyLog
   - Cpp
 tags:
-  - Programming Language
+  - Programming
+  - Language
   - C++
 excerpt: c++ 자료형의 종류와 변수의 선언
 project_rank: "680"
-sticker: emoji//1 f 4 aa
+sticker: emoji//1f4aa
 ---
 
 # 서론
@@ -80,11 +81,11 @@ constexpr int n;
 > - `const int nNum` == `int const nNum`
 > - 오른쪽이 기본형이나 주로 **왼쪽**의 형태로 사용
   
-- 읽기 전용이라 생각하면 됨
+- <span style="color:rgb(255, 0, 0)">읽기 전용</span>이라 생각하면 됨
 - 할당 후 변경은 불가(단 casting을 이용할 경우 제외)하나 return값을 이용해 할당가능(**run-time**)
 - const : **run-time** binding
 - **constexpr**의 경우 **compile-time binding**
-    - 즉 할당은 rvalue의 literal 상수 혹은 상수표현식(변수 혹은 return)으로만 이루어짐
+    - 즉 할당은 rvalue의<span style="color:rgb(255, 0, 0)"> literal 상수</span> 혹은 <span style="color:rgb(255, 0, 0)">상수표현식(변수 혹은 return)</span>으로만 이루어짐
 
 ```cpp
 const int num = 5;         // 상수 정수형 num에 5를 저장
@@ -139,14 +140,14 @@ p2 = new int; // error
 
 ## static, extern
 
-> static : **local 변수** + lifetime 변경(프로그램 종료시), 정적 변수(static variable)
+> static : **local 변수** + lifetime 변경(<span style="color:rgb(255, 0, 0)">프로그램 종료시</span>), 정적 변수(static variable)
 extern : compiler에게 **변수의 선언**을 명시
 
 - 연결속성
     - static : **내부연결**
     - extern : **외부연결** 가능
 - static은 지역변수의 scope을 가진 global 변수로 생각
-    - 즉 함수를 벗어난 후(local의 경우 소멸) 다시 진입할 시 기존 값 유지
+    - 즉 함수를 벗어난 후(local의 경우 소멸) 다시 진입할 시 <span style="color:rgb(255, 0, 0)">기존 값 유지</span>
 - static 변수의 경우 접미사로 **s_**를 사용(일반적으로)
 - 멤버 함수/변수 등 함수와 class를 static으로 선언 가능하며, 해당 파트에서 다룰 예정
 

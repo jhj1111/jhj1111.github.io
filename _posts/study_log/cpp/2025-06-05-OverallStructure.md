@@ -1,5 +1,5 @@
 ---
-title: 기본 구조
+title: (C++)1. 기본 구조
 thumbnail: https://www.infoworld.com/wp-content/uploads/2024/06/c-plus-plus_code-100790020-orig.jpg?quality=50&strip=all
 layout: post
 author: jhj
@@ -7,7 +7,8 @@ categories:
   - StudyLog
   - Cpp
 tags:
-  - Programming Language
+  - Programming
+  - Language
   - C++
 excerpt: c++ 전체 구성요소 및 특징
 project_rank: "680"
@@ -333,7 +334,7 @@ void func(int a, int b) {
 
 ```cpp
 복사편집
-class C {
+class C : public <parent> {
 private:               // 선언 없을 시 기본값(class)
     int value;
 

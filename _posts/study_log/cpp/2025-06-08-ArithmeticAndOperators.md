@@ -1,5 +1,5 @@
 ---
-title: 연산(arithmetic)과 연산자(operators)
+title: (C++)4. 연산(arithmetic)과 연산자(operators)
 thumbnail: https://acaroom.net/sites/default/files/uploads/datatypec.png
 layout: post
 author: jhj
@@ -7,11 +7,12 @@ categories:
   - StudyLog
   - Cpp
 tags:
-  - Programming Language
+  - Programming
+  - Language
   - C++
 excerpt: c++ 연산자의 종류와 우선순위
 project_rank: "680"
-sticker: emoji//1 f 4 aa
+sticker: emoji//1f4aa
 ---
 
 # 산술연산(Arithmetic)
