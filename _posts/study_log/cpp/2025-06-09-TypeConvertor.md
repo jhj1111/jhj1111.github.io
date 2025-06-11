@@ -257,8 +257,8 @@ int main()
 ### up/downcast
 ![/assets/images/study_log/cpp/2025-06-09-TypeConvertor/up_downcast.png.png](/assets/images/study_log/cpp/2025-06-09-TypeConvertor/up_downcast.png.png)
 출처: [https://nybot-house.tistory.com/66](https://nybot-house.tistory.com/66)
-- **Upcast**: Derived 클래스에서 Base 클래스로 변환하는 것 , 즉 <span style="color:rgb(255, 0, 0)">상위클래스로 변환</span>
-- **Downcast**: Base클래스에서 Derived 클래스로 내려 변환하는 것, 즉 <span style="color:rgb(255, 0, 0)">하위클래스로 변환</span>
+- **Upcast**: Derived(Child) 클래스에서 Base(Parent) 클래스로 변환하는 것 , 즉 <span style="color:rgb(255, 0, 0)">상위클래스로 변환</span>
+- **Downcast**: Base(Parent) 클래스에서 Derived(Child) 클래스로 내려 변환하는 것, 즉 <span style="color:rgb(255, 0, 0)">하위클래스로 변환</span>
 
 ### Downcast
 > 클래스의 implicit방식의 upcast는 허용되나 <span style="color:rgb(255, 0, 0)">downcast는 허용하지 않음</span>(compile error). 즉 dynamic_conversion은 **downcast를 위한 형변환**.
@@ -267,7 +267,7 @@ int main()
 
 ```cpp
 Parent* pPtr = new Child() 
-Child* cPtr = dynamic_cast<Child*>(Parent);	// Child Ptr 혹은 nullptr(변환 불가 시) 반환
+Child* cPtr = dynamic_cast<Child*>(pPtr);	// Child Ptr 혹은 nullptr(변환 불가 시) 반환
 
 if(cPtr == nullptr);
 ```
