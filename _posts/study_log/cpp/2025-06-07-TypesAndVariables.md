@@ -32,7 +32,7 @@ sticker: emoji//1f4aa
 
 > 정의한 자료형의 값을 저장할 수 있는 메모리 공간
  
-- 변수 $\subset$ 객체
+- 변수 $$\subset$$ 객체
     - 단 모든 class가 변수인건 아님(멤버 함수만 있는 경우)
 - 기능(특히 scope 범위)에 따른 분류
     - `static`, `const`, `dynamic`, `auto`, …
@@ -149,8 +149,23 @@ extern : compiler에게 **변수의 선언**을 명시
     - extern : **외부연결** 가능
 - static은 지역변수의 scope을 가진 global 변수로 생각
     - 즉 함수를 벗어난 후(local의 경우 소멸) 다시 진입할 시 <span style="color:rgb(255, 0, 0)">기존 값 유지</span>
-- static 변수의 경우 접미사로 **s_**를 사용(일반적으로)
+- `static` 과 `global` 변수는 선언과 동시에 0이 자동 할당
 - 멤버 함수/변수 등 함수와 class를 static으로 선언 가능하며, 해당 파트에서 다룰 예정
+
+```cpp
+int kglobal;
+
+int main() {
+    static int kvar;
+    
+    printf("kglobal = %d\n", kglobal);
+    printf("kvar = %d\n", kvar);
+} 
+
+>>> 
+kglobal = 0
+kvar = 0
+```
 
 ## typedef, using
 
