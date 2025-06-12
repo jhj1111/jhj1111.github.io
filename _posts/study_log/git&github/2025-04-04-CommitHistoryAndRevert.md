@@ -1,5 +1,6 @@
 ---
-title: commit 조회 및 되돌리기
+title: (git)3. commit 조회 및 되돌리기
+post_order: 3
 thumbnail: https://www.earthdatascience.org/images/earth-analytics/git-version-control/git-add-commit.png
 layout: post
 author: jhj
