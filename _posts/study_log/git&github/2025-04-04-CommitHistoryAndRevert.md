@@ -103,6 +103,8 @@ HEAD is now at 59739ad add commit1
 
 ## 파일 상태를 Unstage로 변경
 
+![](/assets/images/study_log/git&github/2025-04-04-CommitHistoryAndRevert/git_reset.gif)
+
 - Stage → Unstage 상태 변경(git add 취소)
 - 3가지 버전 **soft**, **mixed**, **hard**
     - reset의 endpoint(버전)를 **HEAD**, **Indx**, **Working Directory** 중 어디로 정하는지에 따라 다름
