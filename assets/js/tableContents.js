@@ -3,33 +3,30 @@ const table_contents_btn = document.querySelector('.table_contents_btn');
 const table_contents_btn_p = document.querySelector('.table_contents_btn p');
 
 const original_table_contents_btn = table_contents_btn ? window.getComputedStyle(table_contents_btn) : "";
-let isManuallyToggled = false; // ⭐ 클릭으로 토글했는지 여부
 
 function table_close_click(){
     if (table_contents.style.right === '' || table_contents.style.right === '15px') {
         close_contents_btn();
-        isManuallyToggled = false; // 닫았으므로 클릭 상태 해제
     } else {
         open_contents_btn();
-        isManuallyToggled = true; // 열었으므로 클릭 상태 설정
     }
 }
 
 
 const mediaQuery1470 = window.matchMedia('(max-width: 1470px)');
 function check_matches() {
-    // if (mediaQuery1470.matches){
-    //     close_contents_btn();
-    // } else {
-    //     open_contents_btn();
-    // }
-    close_contents_btn();
+    if (mediaQuery1470.matches){
+        close_contents_btn();
+    } else {
+        open_contents_btn();
+    }
 }
 
 // check_matches();
-// mediaQuery1470.addListener(() =>{
-//     check_matches();
-// });
+close_contents_btn();
+mediaQuery1470.addListener(() =>{
+    check_matches();
+});
 
 
 function close_contents_btn(){
@@ -48,68 +45,64 @@ function open_contents_btn(){
 }
 
 
-
+// let headings = [];
+const articleContainer = document.querySelector('#body .article');
+const headings = articleContainer.querySelectorAll('h1, h2, h3');
 
 document.addEventListener('DOMContentLoaded', function() {
-    const articleContainer = document.querySelector('#body .article');
-    const headings = articleContainer.querySelectorAll('h1, h2');
+    // const articleContainer = document.querySelector('#body .article');
+    // const headings = articleContainer.querySelectorAll('h1, h2, h3');
     const table_content_inner = document.querySelector('.table_content_inner');
-    const wrapper = document.querySelector('.table_contents_wrapper');
-
-    let closeTimer = null; // 닫기 타이머 저장 변수
 
     if (headings.length > 0) {
         table_contents.style.display = 'flex';
 
         const tocList = document.createElement('ul');
 
-        headings.forEach((heading) => {
-            const listItem = document.createElement('li');
-            listItem.textContent = heading.textContent;
-            listItem.classList.add('toc-item', `toc-level-${heading.tagName[1]}`);
+    headings.forEach((heading, index) => {
+        const id = `toc-heading-${index}`;
+        heading.id = id;
 
-            listItem.addEventListener('click', () => {
-                heading.scrollIntoView({ behavior: 'smooth' });
-            });
+        const listItem = document.createElement('li');
+        listItem.textContent = heading.textContent;
+        listItem.classList.add('toc-item', `toc-level-${heading.tagName[1]}`);
+        listItem.setAttribute('data-target-id', id);  // 연결
 
-            tocList.appendChild(listItem);
+        listItem.addEventListener('click', () => {
+            heading.scrollIntoView({ behavior: 'smooth' });
         });
+
+        tocList.appendChild(listItem);
+    });
 
         table_content_inner.appendChild(tocList);
-
-        // 초기 닫힌 상태
-        // table_contents.style.right = '-300px';
-        close_contents_btn();
-
-        // hover 시 열기
-        table_contents.addEventListener('mouseenter', () => {
-            if (!isManuallyToggled && closeTimer) {
-                clearTimeout(closeTimer);
-                closeTimer = null;
-                open_contents_btn();
-            }
-            // if (!isManuallyToggled) open_contents_btn();
-        });
-        
-        // 마우스가 벗어나면 닫기
-        table_contents.addEventListener('mouseleave', () => {
-            if (!isManuallyToggled){
-                closeTimer = setTimeout(() => {
-                    close_contents_btn();
-                    closeTimer = 3000;
-                }, 100); // ← 여기서 딜레이 시간(ms) 조절 가능
-            }
-        });
-        
-        // click 시 열기
-        table_contents_btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // 혹시 모를 이벤트 버블링 방지
-            table_close_click();
-        });
-        
     } else {
         table_contents.style.display = "none";
         table_contents_btn.style.display = "none";
     }
 });
 
+window.addEventListener('scroll', () => {
+    let current = null;
+    const offset = 10;  // 조금 위에 있을 때도 감지되도록
+
+    headings.forEach((heading) => {
+        const rect = heading.getBoundingClientRect();
+        // if (rect.top < offset && rect.bottom > 0) {
+        if (rect.top < offset) {
+            current = heading;
+        }
+    });
+
+    document.querySelectorAll('.toc-item').forEach((item) => {
+        item.classList.remove('active-toc');
+    });
+
+    if (current) {
+        const id = current.id;
+        const activeItem = document.querySelector(`.toc-item[data-target-id="${id}"]`);
+        if (activeItem) {
+            activeItem.classList.add('active-toc');
+        }
+    }
+});
