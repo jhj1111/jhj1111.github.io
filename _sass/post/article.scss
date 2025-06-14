@@ -45,7 +45,8 @@
     h1 {
         @include font_pretendard_600;
         @include font_size_M5;
-        color: $mainColor;
+        // color: $mainColor;
+        color: #8a2be2;
 
         max-width: max-content;
 
@@ -61,13 +62,15 @@
     h2 {
         @include font_pretendard_600;
         @include font_size_M3;
-        color: $mainColor;
+        // color: $mainColor;
+        color: #e22bdf;
         margin-top: 50px; margin-bottom: 10px;
     }
     h3 {
         @include font_pretendard_600;
         @include font_size_M2;
-        color: $mainColor;
+        // color: $mainColor;
+        color: #2e2be2;
         margin-top: 40px; margin-bottom: 16px;
         font-size: 20px;
     }
