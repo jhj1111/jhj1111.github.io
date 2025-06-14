@@ -72,6 +72,11 @@
         font-weight: 600;
         font-family: 'Pretendard-Regular', sans-serif;
     }
+    .toc-item.active-toc::before {
+        content: '▶ ';
+        color: #2be28a;
+        font-weight: bold;
+    }
     .table_content_inner{
         display: flex;
         flex-direction: column;
@@ -97,7 +102,8 @@
         .toc-level-1{
             @include font_pretendard_600;
             @include font_size_S3;
-            color: $mainColor;
+            // color: $mainColor;
+            color: #8a2be2;
 
             margin-bottom: 8px;
             padding-bottom: 1px;
@@ -105,11 +111,20 @@
         .toc-level-2{
             @include font_pretendard_500;
             @include font_size_S2;
-            color: #000000;
+            color: #e22bdf;
 
             margin-bottom: 8px;
             padding-bottom: 1px;
             margin-left: 10px;
+        }
+        .toc-level-3{
+            @include font_pretendard_400;
+            @include font_size_S2;
+            color: #2e2be2;
+
+            margin-bottom: 8px;
+            padding-bottom: 1px;
+            margin-left: 20px;
         }
     }
 
