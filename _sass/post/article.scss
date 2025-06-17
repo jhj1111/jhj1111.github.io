@@ -100,6 +100,7 @@
     em {
         font-style: italic;
     }
+    // `` 강조 구문
     code {
         @include font_pretendard_600;
         @include font_size_S3-5;
@@ -109,12 +110,15 @@
         padding: 3px 6px;
         border-radius: 5px;
     }
+    // ** 강조 구문
     strong {
         // @include font_pretendard_600;
         @include font_omyu_600;
         @include font_size_S5;
         color: #590000;
     }
+    // ---------------------------------------------
+    // Underline
     u {
         max-width: 100%;
         width: 100%;
