@@ -1,8 +1,8 @@
 @mixin article_border_shadow_padding {
-    border-radius: 12px;
+    border-radius: 2px;
     border: 2px solid $mainColor;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    padding: 10px;
+    padding: 8px;
 
     box-sizing : border-box;
 }
@@ -82,7 +82,7 @@
         @include font_pretendard_600;
         @include font_size_S3;
 
-        background-color: #fed9b7;
+        background-color: #D5D7DA;
 
         padding: 3px 6px;
         border-radius: 5px;
@@ -100,6 +100,7 @@
     em {
         font-style: italic;
     }
+    // `` 강조 구문
     code {
         @include font_pretendard_600;
         @include font_size_S3-5;
@@ -109,10 +110,15 @@
         padding: 3px 6px;
         border-radius: 5px;
     }
+    // ** 강조 구문
     strong {
-        @include font_pretendard_600;
-        @include font_size_S4;
+        // @include font_pretendard_600;
+        @include font_omyu_600;
+        @include font_size_S5;
+        color: #590000;
     }
+    // ---------------------------------------------
+    // Underline
     u {
         max-width: 100%;
         width: 100%;
@@ -162,33 +168,33 @@
 
     // ---------------------------------------------
     // link
-    p a {
-        @include article_border_shadow_padding;
-        margin-top: 20px; margin-bottom: 40px;
+    // p a {
+    //     @include article_border_shadow_padding;
+    //     margin-top: 20px; margin-bottom: 40px;
 
-        background-color: transparent;
+    //     background-color: transparent;
 
-        text-decoration: none;
+    //     text-decoration: none;
 
-        padding: 6px 8px;
-    }
-    p:has(a) {
-        text-align: center;
-    }
+    //     padding: 6px 8px;
+    // }
+    // p:has(a) {
+    //     text-align: center;
+    // }
 
-    // ---------------------------------------------
-    // Dividing line
-    hr {
-        @include  article_set_middle;
-        margin-top: 20px; margin-bottom: 20px;
+    // // ---------------------------------------------
+    // // Dividing line
+    // hr {
+    //     @include  article_set_middle;
+    //     margin-top: 20px; margin-bottom: 20px;
 
-        background: $MyOrange;
-        height: 5px;
-        width: 120px;
+    //     background: $MyOrange;
+    //     height: 5px;
+    //     width: 120px;
 
-        border: 0;
-        opacity: 0.5;
-    }
+    //     border: 0;
+    //     opacity: 0.5;
+    // }
 
 
 
@@ -247,7 +253,8 @@
 
             background-color: transparent;
 
-            border-radius: 12px 12px 0 0;
+            // border-radius: 12px 12px 0 0;
+            border-radius: 2px 2px 0 0;
             border: 2px solid $mainColor;
             border-bottom: none;
             
