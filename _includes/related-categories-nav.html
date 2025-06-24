@@ -1,0 +1,33 @@
+{% assign posts = site.posts %}
+{% assign category_key = page.categories | last | downcase %}
+
+
+<div class="related-posts">
+  <div class="cat_title">
+    {% if page.categories.size > 0 %}
+      <h2>{{ page.categories | last }}<span class="toggle_arrow">▼</span></h2>
+    {% endif %}
+  </div>
+
+  <ul class="cat_part">
+    {% for post in posts %}
+        {% assign cat = post.categories | downcase %}
+        {% if post == page %}
+          <li>
+            <a href="{{ post.url | relative_url }}" style="text-decoration: solid; color: crimson;">
+              {{ post.title }}
+            </a>
+          </li>
+        {% else %}
+          {% if cat contains category_key %}
+            <li>
+              <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: inherit;">
+                {{ post.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endif %}
+    {% endfor %}
+    
+  </ul>
+</div>
