@@ -158,7 +158,7 @@ To https://github.com/schacon/simplegit
 # Fetch & Pull
 
 - **remote의 변경 사항**을 **로컬로** 가져오는 작업
-- `git pull` == `git fetch` && `git merge` | `git rebase`
+- `git pull` == `git fetch` && `git merge` \| `git rebase`
 
 ## Fetch
 > 로컬 저장소에  트래킹 브랜치를 생성 또는 갱신한다.
