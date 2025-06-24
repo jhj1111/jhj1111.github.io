@@ -13,6 +13,69 @@
 
 @mixin article_set_middle { margin-left: auto; margin-right: auto; }
 
+.related-posts {
+    @include article_set_middle;
+    @include article_border_shadow_padding;
+    @include article_margin_40;
+
+    width: 90%;
+    background-color: #f3efef;
+
+    
+    h2 {
+        @include font_pretendard_600;
+        @include font_size_M3;
+        color: #0a75ad;
+        margin-top: 0; margin-bottom: 20px;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 0; margin-bottom: 20px;
+
+        li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+            &:hover {
+                color: #c0d6e4;
+            }
+        }
+    }
+    
+    a {
+        @include font_pretendard_600;
+        @include font_size_S3;
+        
+        transition: color 0.2s;
+        
+        &:hover {
+            color: #fff;
+        }
+    }
+    .toggle_arrow {
+        @include font_pretendard_600;
+        @include font_size_S3;
+    
+        color: #0a75ad;
+        margin-left: 380px;
+        // margin-block-start: auto;
+    
+    
+        transition: transform 0.2s;
+    
+        &.active {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+
 .article{
     // @include flex-col-start-start;
     // Flex box가 되면 아래 요소들의 margin이 안겹침
