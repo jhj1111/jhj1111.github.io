@@ -748,8 +748,12 @@ vec[4] = 5	// UB
 > C++의 기본 문자 리터럴의 경우 char*(C-style)이다. 
 > 일반적으로 일부 특징과 단점을 개선한 **Standard Template Library (STL)** 에 정의된 문자를 사용한다.
 
+- `"<str>"` : `const char*` \| `char[]`
+- `'<str>'` : **int** 타입(ASCII 코드)
+
 ```cpp
 auto cstr = "Hello, World!"; // C-style string
+int ns = 'abc';  // <- ns 는 'abc' 의 ASCII 코드값을 저장함, 즉 97
 
 cstr.size(); // error
 /*
@@ -953,3 +957,78 @@ int main() {
   std::cout << sv << std::endl;	// z0z, oo 등
 }
 ```
+
+## std::stirng 함수
+
+### 특정 원소 접근   
+
+| 함수              | 설명                        |
+| --------------- | ------------------------- |
+| **str.at(idx)** | idx 위치 문자 반환, 범위 유효성 체크 O |
+| **str[idx]**    | idx 위치 문자 반환, 범위 유효성 체크 X |
+| **str.front()** | 문자열의 가장 앞의 문자 반환          |
+| **str.back()**  | 문자열의 가장 뒤의 문자 반환          |
+
+### 문자열의 크기
+
+| 함수                      | 설명                                               |
+| ----------------------- | ------------------------------------------------ |
+| **str.length()**        | 문자열 길이 반환                                        |
+| **str.size()**          | 문자열 길이 반환(length()와 동일)                          |
+| **str.max_size()**      | 최대한 메모리 할당할 경우 저장할 수 있는 문자열 길이 반환                |
+| **str.capacity()**      | 문자열의 메모리 크기 반환                                   |
+| **str.resize(n)**       | str을 n의 크기로 만듦. 삭제 또는 빈 공간으로 채움                  |
+| **str.resize(n, 'a')**  | n이 str 길이보다 크면 빈 공간을 'a'로 채움                     |
+| **str.shrink_to_fit()** | capacity가 실제 사용하는 메모리보다 큰 경우 메모리 줄여 줌(메모리 낭비 제거) |
+| **str.reserve(n)**      | 사이즈 n 만큼의 메모리 미리 할당                              |
+| **str.empty()**         | str이 빈 문자열인지 확인                                  |
+
+### 문자열 삽입/추가/삭제
+
+| 함수                         | 설명                                        |
+| -------------------------- | ----------------------------------------- |
+| str.append(str2)           | str 뒤에 str2 문자열을 이어 붙여 줌(str + str2 와 같음) |
+| str.append(str2, n ,m)     | str 뒤에 'str2의 n index 부터 m개의 문자'를 이어 붙여 줌 |
+| str.append(n, 'a')         | str 뒤에 n 개의 'a'를 붙여 줌                     |
+| str.insert(n, str2)        | n번째 index 앞에 str2 문자열을 삽입함                |
+| str.replace(n, k, str2)    | n번째 index 부터 k개의 문자열을 str2로 대체함           |
+| str.clear()                | 저장된 문자열을 모두 지움                            |
+| str.erase()                | clear()와 같음                               |
+| str.erase(n, m)            | n번째 index부터 m개의 문자를 지움                    |
+| str.erase(n, m) ← iterator | n~m index 문자열을 지움(n, m은 iterator임)        |
+| str.push_back(c)           | str의 맨 뒤에 c를 붙여 줌                         |
+| str.pop_back()             | str의 맨 뒤의 문자를 제거                          |
+| str.assign(str2)           | str 에 str2 문자열을 할당함                       |
+
+### 부분 문자/비교/복사/찾기
+
+| 함수                         | 설명                                                     |
+| -------------------------- | ------------------------------------------------------ |
+| **str.substr()**           | str 전체를 반환                                             |
+| **str.substr(n)**          | str의 n번째 index부터 끝까지 부분 문자열 반환                         |
+| **str.substr(n, k)**       | str의 n번째 index부터 k개의 부분 문자열 반환                         |
+| **str.compare(str2)**      | str과 str2가 같은지 비교, str<str2인 경우 음수, str>str2인 경우 양수 반환 |
+| **str.copy(str2, k, n)**   | str의 n번째 index부터 k개의 문자열 복사                            |
+| **str.find("abcd")**       | "abcd"가 str에 포함되어 있는지 확인, 찾으면 해당 부분 첫 index 반환         |
+| **str.find("abcd", n)**    | n번째 index부터 "abcd"를 찾음                                 |
+| **str.find_first_of("/")** | "/"가 처음 나타나는 index                                     |
+| **str.find_last_of("/")**  | "/"가 마지막으로 나타나는 index                                  |
+### 기타
+
+| 함수                                 | 설명                                                             |
+| ---------------------------------- | -------------------------------------------------------------- |
+| **str.c_str()**                    | string을 c스타일의 문자열로 변경                                          |
+| **str.begin()**                    | string의 시작 iterator 반환                                         |
+| **str.end()**                      | string의 끝 iterator 반환                                          |
+| **swap(str, str2)**                | str과 str2를 바꿔줌                                                 |
+| **str = str2 + str3**              | str2와 str3를 붙여서 str에 복사함                                       |
+| **str += str2**                    | str 뒤에 str2를 붙여줌                                               |
+| **str = str2**                     | str에 str2 복사 (Deep Copy)                                       |
+| **str == str2**                    | str과 str2가 같은지 확인                                              |
+| **str > str2, str < str2**         | str이 str2보다 사전순으로 앞인지 뒤인지 확인                                   |
+| **isdigit(c)**                     | #include <cctype>, c가 숫자인지 확인, 숫자이면 0이 아닌 숫자 반환                |
+| **isalpha(c)**                     | #include <cctype>, 알파벳 확인, 대문자는 1 반환, 소문자는 2 반환, 알파벳이 아니면 0 반환 |
+| **toupper(c)**                     | #include <cctype>, c를 대문자로 변환                                  |
+| **tolower(c)**                     | #include <cctype>, c를 소문자로 변환                                  |
+| **stoi(), stof(), stol(), stod()** | 문자열을 숫자로 변환(int, float, long, double)                          |
+| **to_string(n)**                   | 숫자 n을 문자열로 변환                                                  |
