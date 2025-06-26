@@ -1013,6 +1013,7 @@ int main() {
 | **str.find("abcd", n)**    | n번째 index부터 "abcd"를 찾음                                 |
 | **str.find_first_of("/")** | "/"가 처음 나타나는 index                                     |
 | **str.find_last_of("/")**  | "/"가 마지막으로 나타나는 index                                  |
+
 ### 기타
 
 | 함수                                 | 설명                                                             |
