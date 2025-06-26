@@ -745,5 +745,211 @@ vec[4] = 5	// UB
 	- 일정한 데이터는 <span style="color:rgb(255, 0, 0)">constant</span> (`const` \| `const&`)로 값 고정
 
 # 문자, 문자 리터럴
+> C++의 기본 문자 리터럴의 경우 char*(C-style)이다. 
+> 일반적으로 일부 특징과 단점을 개선한 **Standard Template Library (STL)** 에 정의된 문자를 사용한다.
 
+```cpp
+auto cstr = "Hello, World!"; // C-style string
 
+cstr.size(); // error
+/*
+const char *cstr
+C-style string
+*/
+```
+
+## basic_string
+> 특정 타입의 객체들을 **메모리에 연속적**으로 저장하고, 여러가지 문자열 연산들을 지원해주는 클래스.
+
+```cpp
+template <class CharT, class Traits = std::char_traits<CharT>,
+          class Allocator = std::allocator<CharT> >
+class basic_string;
+```
+
+- `CharT` : 객체 저장 타입
+
+|타입|정의|비고|
+|---|---|---|
+|[std::string](https://modoocode.com/237)|`std::basic_string<char>`||
+|[std::wstring](https://modoocode.com/237)|`std::basic_string<wchar_t>`|`wchar_t` 의 크기는 시스템 마다 다름. 윈도우에서는 2 바이트이고, 유닉스 시스템에서는 4 바이트|
+|`std::u8string`|`std::basic_string<char8_t>`|`C++ 20` 에 새로 추가되었음; `char8_t` 는 1 바이트; UTF-8 문자열을 보관할 수 있음|
+|[std::u16string](https://modoocode.com/237)|`std::basic_string<char16_t>`|`char16_t` 는 2 바이트; UTF-16 문자열을 보관할 수 있음|
+|[std::u32string](https://modoocode.com/237)|`std::basic_string<char32_t>`|`char32_t` 는 4 바이트; UTF-32 문자열을 보관할 수 있음|
+
+- `Traits` : 기본적인 문자열 연산들을 정의
+	- 대소 비교, 길이 등
+	- 간단한 연산을 제공, 데이터를 **저장할 필요가 없음** -> 모두 **static**함수로 정의
+- 원하는 기능을 Overriding을 통해 사용 가능
+
+```cpp
+// 숫자와 문자열의 우선순위를 바꾸는 예시
+#include <cctype>
+#include <iostream>
+#include <string>
+
+// char_traits 의 모든 함수들은 static 함수 입니다.
+struct my_char_traits : public std::char_traits<char> {
+  static int get_real_rank(char c) {
+    // 숫자면 순위를 엄청 떨어트린다.
+    if (isdigit(c)) {
+      return c + 256;
+    }
+    return c;
+  }
+
+  static bool lt(char c1, char c2) {
+    return get_real_rank(c1) < get_real_rank(c2);
+  }
+
+  static int compare(const char* s1, const char* s2, size_t n) {
+    while (n-- != 0) {
+      if (get_real_rank(*s1) < get_real_rank(*s2)) {
+        return -1;
+      }
+      if (get_real_rank(*s1) > get_real_rank(*s2)) {
+        return 1;
+      }
+      ++s1;
+      ++s2;
+    }
+    return 0;
+  }
+};
+
+int main() {
+  std::basic_string<char, my_char_traits> my_s1 = "1a";
+  std::basic_string<char, my_char_traits> my_s2 = "a1";
+
+  std::cout << "숫자의 우선순위가 더 낮은 문자열 : " << std::boolalpha
+            << (my_s1 < my_s2) << std::endl;
+	// 숫자의 우선순위가 더 낮은 문자열 : false
+	
+  std::string s1 = "1a";
+  std::string s2 = "a1";
+
+  std::cout << "일반 문자열 : " << std::boolalpha << (s1 < s2) << std::endl;
+  	// 일반 문자열 : true
+}
+```
+
+## 문자 리터럴
+> 기본 문자 리터럴은 C-style이지만, `std::literals` 를 이용해 C++-style 문자 리터럴 사용이 가능하다.
+
+- `using namespace std::literals` : namespace 선언 필요
+- `<string>s` : **std::string** 
+- `L<string>` : **std::wstring**
+
+```cpp
+using namespace std::string_literals; // for string literals
+
+int main() {
+  auto cstr = "Hello, World!"; // C-style string
+  auto str = "Hello, World!"s; // C++ string literal
+  auto wstr = L"Hello, World!"; // Wide string literal
+  auto multistr = R"({}H
+  e
+  l
+  l
+  o, World!)";
+}
+```
+
+## string_view
+> 문자열을 변경하지 않고 읽기만 하고 싶을 경우 사용한다.
+> C++에서는 문자 리터럴이 C-style (pointer), C++-style (reference) 2가지 다른 방식이 존재하기 때문에, 항상 2가지 방법의 overloading이 필요하다.
+> 2가지 버전에 상관없이 일반적으로 처리하기 위해 사용하는 것이 string_view 타입이다.
+
+- 인자의 형태
+	- `const stirng&` :  `const char*` 일 경우 string 객체 생성(복사 발생)
+	- `const char*` : 주소값 처리(pointer), 길이 정보 매번 계산 필요
+
+```cpp
+#include <iostream>
+#include <string>
+
+void* operator new(std::size_t count) {
+  std::cout << count << " bytes 할당 " << std::endl;
+  return malloc(count);
+}
+
+// 문자열에 "very" 라는 단어가 있으면 true 를 리턴함
+bool contains_very(const std::string& str) {
+  return str.find("very") != std::string::npos;
+}
+
+int main() {
+  // 암묵적으로 std::string 객체가 불필요하게 생성된다.
+  std::cout << std::boolalpha << contains_very("c++ string is very easy to use")
+            << std::endl;
+
+  std::cout << contains_very("c++ string is not easy to use") << std::endl;
+}
+
+>>> 
+
+31 bytes 할당 
+true
+30 bytes 할당 
+false
+```
+
+- `string_view` : **읽기 전용** 타입
+	- 문자열을 소유하지 않기 때문에 소멸 상태인지 확인 필요(<span style="color:rgb(255, 0, 0)">UB</span>, 함수 **return** 등)
+	- O(1) 로 매우 빠르게 수행
+
+```cpp
+#include <iostream>
+#include <string>
+
+void* operator new(std::size_t count) {
+  std::cout << count << " bytes 할당 " << std::endl;
+  return malloc(count);
+}
+
+// 문자열에 "very" 라는 단어가 있으면 true 를 리턴함
+bool contains_very(std::string_view str) {
+  return str.find("very") != std::string_view::npos;
+}
+
+int main() {
+  // string_view 생성 시에는 메모리 할당이 필요 없다.
+  std::cout << std::boolalpha << contains_very("c++ string is very easy to use")
+            << std::endl;
+
+  std::cout << contains_very("c++ string is not easy to use") << std::endl;
+
+  std::string str = "some long long long long long string";
+  std::cout << "--------------------" << std::endl;
+  std::cout << contains_very(str) << std::endl;
+}
+
+>>> 
+
+true
+false
+37 bytes 할당 
+--------------------
+false
+```
+
+---
+
+```cpp
+#include <iostream>
+#include <string>
+
+std::string_view return_sv() {
+  std::string s = "this is a string";
+  std::string_view sv = s;
+
+  return sv;
+}
+
+int main() {
+  std::string_view sv = return_sv();  // <- sv 가 가리키는 s 는 이미 소멸됨!
+
+  // Undefined behavior!!!!
+  std::cout << sv << std::endl;	// z0z, oo 등
+}
+```
