@@ -320,7 +320,7 @@ int main() {
 ```
 
 - shared_ptr와 다르게 **참조 개수를 늘리지 않음**
-	- weak_ptr -> shared_ptr 이지만 반대는 성립하지 않을 때, shared_ptr 객체는 소멸($\because$ ref count == 0)
+	- weak_ptr -> shared_ptr 이지만 반대는 성립하지 않을 때, shared_ptr 객체는 소멸($$\because$$ ref count == 0)
 	- **제어 블록을 생성하지 않으므로** 가르키는 **대상이 shared_ptr**여야 함
 	- 또한 shared_ptr로 변환 과정 필요
 - `std::weak_ptr<T>::lock`
