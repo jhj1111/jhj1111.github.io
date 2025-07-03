@@ -1,5 +1,5 @@
 ---
-title: (C++)8. 스마트 포인터
+title: (C++)9. 스마트 포인터
 post_order: 9
 thumbnail: https://miro.medium.com/v2/resize:fit:898/1*wYw8dYdGd0JabdkBrMiwIQ.png
 layout: post

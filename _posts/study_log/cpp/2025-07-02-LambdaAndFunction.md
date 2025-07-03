@@ -1,7 +1,7 @@
 ---
-title: (C++)10. 스마트 포인터
+title: (C++)10. 람다(lambda) 함수와 callable
 post_order: 10
-thumbnail: https://miro.medium.com/v2/resize:fit:898/1*wYw8dYdGd0JabdkBrMiwIQ.png
+thumbnail: https://codingnuri.com/golang-book/assets/function.png
 layout: post
 author: jhj
 categories:
@@ -11,7 +11,7 @@ tags:
   - Programming
   - Language
   - C++
-excerpt: 함수 생성과 작동 방식
+excerpt: 람다와 callable 함수
 project_rank: "600"
 sticker: emoji//1f4aa
 ---
