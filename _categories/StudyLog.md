@@ -12,6 +12,7 @@ children:
     - ComputerVision
     - Git&GitHub
     - Cpp
+    - DB
     
 # 메인 아이콘
 icon: <img width="96" height="96" src="https://img.icons8.com/?size=100&id=6895&format=png&color=BC52FA" alt="external-Project-graphic-design-goofy-color-kerismaker"/>
