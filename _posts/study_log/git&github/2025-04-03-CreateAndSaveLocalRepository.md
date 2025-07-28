@@ -19,7 +19,7 @@ sticker: emoji//1f4aa
 
 # 일반적인 순서
 
-- `git init` | `git clone` → (`git remote` )→ (`git pull`) → `git add` → (`git merge`)→ `git commit` → `git push`
+- `git init` \| `git clone` → (`git remote` )→ (`git pull`) → `git add` → (`git merge`)→ `git commit` → `git push`
 
 # repository(저장소) 생성
 
@@ -45,6 +45,8 @@ $ git commit -m '<commit_massage>'
 
 ![출처: https://velog.io/@itzel_02/IntelliJ-git-clone-및-연동-방법](/assets/images/study_log/git&github/2025-04-03-CreateAndSaveLocalRepository/image01.png)
 
+- `git clone` : remote repository(GitHub) → local repository
+- <url\> 뒤에 직접 저장소 이름 지정 가능, 생략할 시 remote repository와 동일하게 설정됨
 
 ```bash
 $ git clone <url>
@@ -53,9 +55,6 @@ $ git clone <url> <rename_repository>
 ex)
 $ git clone https://github.com/libgit2/libgit2 mylibgit
 ```
-
-- `git clone` : remote repository(GitHub) → local repository
-- <url> 뒤에 직접 저장소 이름을 적을 수 있으며, 생략할 시 remote repository와 동일하게 설정됨
 
 # 수정 및 저장소 저장
 
@@ -76,7 +75,7 @@ M lib/simplegit.rb
 ?? LICENSE.txt
 ```
 
-- `git status -s` | `git status --short`
+- `git status -s` \| `git status --short`
     
     
     | 기호 | 의미 |
@@ -94,7 +93,7 @@ M lib/simplegit.rb
 
 ## 파일을 새로 추적하기
 
-- `git add <file1> <file2> ...` | `git add .` | `git add *`
+- `git add <file1> <file2> ...` \| `git add .` \| `git add *`
     - staged 상태로 변환하려는 file 추가
     - **. or *** : .gitignore를 제외한 디렉토리 내 모든 파일
 - Changes to be committed, 즉 **commit할 준비가 된 상태(Index)**로 변환
@@ -153,4 +152,4 @@ create mode 100644 README
     - **!로 시작**하는 패턴의 파일 **무시하지 않음**
 - VSCode상에서 **연한 글씨로 표시**된다면 gitignore가 적용된 상태
 - gitignore 예시
-    - https://github.com/github/gitignore ~~(ROS도 있음 ㅋㅋ)~~
+    - [https://github.com/github/gitignore](https://github.com/github/gitignore) ~~(ROS도 있음 ㅋㅋ)~~
