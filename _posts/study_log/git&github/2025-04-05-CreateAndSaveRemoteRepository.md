@@ -109,13 +109,20 @@ $  git remote show origin
 > 로컬 저장소에 캐시된 remote branch.
  **remote branch 내용**을 담고 있으나 **수정이 불가**하며, 로컬 저장소에 변경사항을 저장(merge) 전 **변경내용을 확인하는 용도**로 사용된다.
 
+- `git clone ` : [(git)2. 저장소 생성 및 저장(local)](../../../2025/04/03/CreateAndSaveLocalRepository.html)
 - `<remote>/<branch>`
-- `git checkout -b <new_local_bracnh> <remote_tracking_branch>` : 
-  리모트 트래킹 브랜치 -> 수정 가능한 새 로컬 브랜치
+- 새로운 branch 생성 -> remote tranking branch 생성
+	- `git checkout -t <remote_tracking_branch>`
+	- `git checkout <new_local_branch>` : 가장 간단, 많이 사용
+	- `git checkout -b <new_local_branch> <remote_tracking_branch>`
 	- 이때 새로 만들어진 branch는 **<remote\>/<branch\>** 가 아닌 **<new_local_branch\>**
 
 ```bash
 $ git checkout -b serverfix origin/serverfix
+$ git checkout -t <remote_tracking_branch>
+$ git checkout <new_local_branch>
+
+
 Branch serverfix set up to track remote branch serverfix from origin.
 Switched to a new branch 'serverfix'
 ```
