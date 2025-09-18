@@ -10,7 +10,8 @@
   </div>
 
   <ul class="cat_part">
-    {% for post in posts %}
+    {% assign sorted_posts = site.posts | sort: 'post_order' | reverse %}
+    {% for post in sorted_posts %}
         {% assign cat = post.categories | downcase %}
         {% if post == page %}
           <li>
