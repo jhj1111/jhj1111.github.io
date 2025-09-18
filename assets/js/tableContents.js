@@ -23,7 +23,7 @@ function check_matches() {
 }
 
 // check_matches();
-close_contents_btn();
+// close_contents_btn();
 mediaQuery1470.addListener(() =>{
     check_matches();
 });
