@@ -53,12 +53,13 @@ curl -L -o /content/datasets/Oxford-cat-breed-dataset.tar.gz https://thor.robots
 ```
 
 ## roboflow
-- 링크 : https://universe.roboflow.com/x-daujs/cat-breed-classification-lbhsm   
+- 링크 : https://universe.roboflow.com/x-daujs/cat-breed-classification-lbhsm
+
 ```python
 !pip install roboflow
 
 from roboflow import Roboflow
-rf = Roboflow(api_key="9mSngBAfmaGYnUfVWAXh")
+rf = Roboflow(api_key="xxx")
 project = rf.workspace("x-daujs").project("cat-breed-classification-lbhsm")
 version = project.version(1)
 dataset = version.download("folder")
