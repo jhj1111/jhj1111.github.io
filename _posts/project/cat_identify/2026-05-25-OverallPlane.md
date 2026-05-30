@@ -1,7 +1,7 @@
 ---
 title: (CatHealth) 전체 기획
 post_order: 1
-thumbnail: https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=640
+thumbnail: /assets/images/project/CatHealth/thumnail/cat_reid_thumnail_01.png
 layout: post
 author: jhj
 categories:

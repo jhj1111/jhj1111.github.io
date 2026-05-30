@@ -1,12 +1,12 @@
 ---
-title: (CatHealth) Android 아키텍처 
-post_order: 2 
-thumbnail: https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=640 
-layout: post 
-author: jhj 
+title: (CatHealth) Android 아키텍처
+post_order: 2
+thumbnail: /assets/images/project/CatHealth/thumnail/cat_reid_thumnail_02.png
+layout: post
+author: jhj
 categories:
   - Project
-  - CatHealth 
+  - CatHealth
 tags:
   - Android
   - Kotlin
@@ -14,10 +14,9 @@ tags:
   - MultiModule
   - Hilt
   - Compose
-  - CleanArchitecture 
+  - CleanArchitecture
 excerpt: 고양이 건강 분석 앱의 Android 멀티모듈 구조, MVI 패턴, 각 모듈별 역할과 의존성 규칙 상세 정리
 ---
-
 # Android 세부 아키텍처
 
 > 작성일: 2025-08  

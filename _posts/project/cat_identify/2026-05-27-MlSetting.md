@@ -1,7 +1,7 @@
 ---
 title: (CatHealth) 카메라 및 tflite 세팅
 post_order: 5
-thumbnail:
+thumbnail: /assets/images/project/CatHealth/thumnail/cat_reid_thumnail_05.png
 layout: post
 author: jhj
 categories:

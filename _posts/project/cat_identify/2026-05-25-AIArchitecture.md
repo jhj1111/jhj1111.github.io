@@ -1,12 +1,12 @@
 ---
 title: (CatHealth) Vision & AI 모델
-post_order: 3 
-thumbnail: https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=640 
-layout: post 
-author: jhj 
+post_order: 3
+thumbnail: /assets/images/project/CatHealth/thumnail/cat_reid_thumnail_03.png
+layout: post
+author: jhj
 categories:
   - Project
-  - CatHealth 
+  - CatHealth
 tags:
   - AI
   - ML
@@ -16,7 +16,7 @@ tags:
   - ONNX
   - ComputerVision
   - NDK
-  - ModelTraining 
+  - ModelTraining
 excerpt: 고양이 건강 분석 앱의 온디바이스 AI 파이프라인 상세 — 종 분류·자세 추정·움직임 분석·건강 점수화 모델 선정, 데이터셋, 학습 계획 정리
 ---
 
