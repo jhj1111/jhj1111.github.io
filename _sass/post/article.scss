@@ -302,10 +302,10 @@
     // ---------------------------------------------
     // Code BOX
     .highlighter-rouge {
-        @include article_set_middle;
+        margin-left: 0;
         margin-top: 20px; margin-bottom: 40px;
 
-        width: 90%;
+        width: 100%;
 
         .language_label {
             @include font_pretendard_600;
