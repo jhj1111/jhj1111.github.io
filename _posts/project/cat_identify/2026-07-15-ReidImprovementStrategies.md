@@ -1,6 +1,7 @@
 ---
 title: (CatHealth) ReID 학습 개선 전략 및 기술 가이드
 post_order: 16
+thumbnail: /assets/images/project/CatHealth/thumnail/cat_reid_thumnail_16.png
 layout: post
 author: jhj
 categories:
