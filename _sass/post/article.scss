@@ -389,14 +389,21 @@
         text-align: center;
     }
     
-        
+    // Mermaid Diagrams
+    .mermaid {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        overflow-x: auto;
+        padding: 10px;
 
-
-
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+    }
 }
-
-
-
 
 
 
