@@ -564,3 +564,7 @@ chosen = int(np.argmax(sims))
 | 표준 기법도 전제 조건을 확인해야 함 | T-norm은 코호트 4개에서 TAR 4.4%로 붕괴 |
 | 파라미터 튜닝은 여러 조건에서 검증 | `match_thresh` 0.85가 한쪽만 개선하고 다른 쪽 붕괴 |
 | 측정 도구 자체도 검증 대상 | numpy 매처 vs FaissMatcher 400/400 일치 확인 |
+
+
+$\tilde{s}_f \approx \sqrt{2} \cdot \log(C - 1)$
+$\tilde{s}_d^{(t)}$
